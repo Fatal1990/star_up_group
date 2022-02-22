@@ -215,3 +215,56 @@ body {
         width: 100%;
     }
 }
+
+.main-purpose {
+    margin-bottom: 92px;
+
+    &__wrp {
+        max-width: 1364px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        margin-bottom: 92px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    &__text {
+        max-width: 657px;
+        width: 100%;
+    }
+    &__title {
+        @include text(24px, 400, $colorBlack);
+        margin-bottom: 38px;
+    }
+    &__button-wrp {
+        display: flex;
+    }
+    &__button-order {
+        @include button($colorWhite, $colorMain);
+        margin-right: 32px;
+        padding: 23px 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.005em;
+        transition: .3s, ease;
+        &:hover {
+            background-color: $colorHoverButton;
+            transition: .3s, ease;
+        }
+    }
+    &__button-about {
+        @include button($colorMain, transparent);
+        border: 3px solid $colorMain;
+        padding: 23px 87px;
+        text-transform: uppercase;
+        letter-spacing: 0.005em;
+        transition: .3s, ease;
+        &:hover {
+            background-color: $colorHoverButton;
+            color: $colorWhite;
+            border-color: $colorHoverButton;
+            transition: .3s, ease;
+        }
+    }
+}
