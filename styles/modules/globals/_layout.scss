@@ -88,6 +88,7 @@ body {
         width: 100%;
         margin: 0 auto;
         padding: 0 16px;
+        margin-bottom: 92px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -135,5 +136,71 @@ body {
             border-color: $colorHoverButton;
             transition: .3s, ease;
         }
+    }
+    &__offer-wrp {
+        max-width: 1364px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__offer-title {
+        @include text(32px, 600, $colorBlack);
+        margin-bottom: 28px;
+    }
+    &__offer-text {
+        @include text(24px, 400, $colorBlack);
+        margin-bottom: 54px;
+    }
+    &__offer-list {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+    }
+    &__offer-item {
+        max-width: 276px;
+        width: 100%;
+        height: 276px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    &__offer-item {
+        padding: 48px 0 0;
+        background: $colorWhite;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+    }
+    &__offer-item-img {
+        align-self: center;
+        margin-bottom: 48px;
+    }
+    &__offer-item-text {
+        @include text(18px, 500, $colorBlack);
+    }
+    &__offer-description{
+        max-width: 1200px;
+        width: 100%;
+        // height: 237px;
+        padding: 41px 103px;
+        border-radius: 8px;
+        background-color: $colorWhite;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+    }
+    &__offer-description-text {
+        @include text(24px, 400, $colorBlack);
+        max-width: 994px;
+        width: 100%;
     }
 }
