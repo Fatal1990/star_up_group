@@ -1,0 +1,139 @@
+body {
+    background-color: $colorGrey;
+    font-family: $font;
+}
+
+.header {
+    background-color: $colorWhite;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+    &__wrp {
+    max-width: 1364px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include text(18px, 500, $colorDark);
+    }
+    &__nav-wrp {
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__lang-wrp {
+        max-width: 176px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.nav-item:hover {
+    color: $colorMain;
+    cursor: pointer;
+}
+
+.lang-item:hover {
+    color: $colorMain;
+    cursor: pointer;
+}
+
+.nav-list-active,
+.lang-item-active {
+    color: $colorMain;
+}
+
+.main {
+    &__idea{
+        background-image: url(../../../img/idea_bg.png);
+        background-repeat: no-repeat;
+        background-position-x: left;
+        background-position-y: top;
+        background-size: contain;
+        margin-bottom: 24px;
+    }
+    &__idea-wrp{
+        max-width: 1364px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        min-height: 760px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__idea-text {
+        max-width: 640px;
+        width: 100%;
+    }
+    &__idea-title {
+        @include text(38px, 700, $colorWhite);
+        margin-bottom: 56px;
+        text-transform: uppercase;
+    }
+    &__idea-description {
+        @include text(24px, 400, $colorWhite);
+    }
+    &__idea-img-wrp {
+        padding-top: 65px;
+    }
+    &__request-wrp {
+        max-width: 1364px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__request-img-wrp {
+        margin-right: 32px;
+    }
+    &__request-text {
+        max-width: 687px;
+        width: 100%;
+    }
+    &__request-title {
+        @include text(28px, 600, #383737);
+        margin-bottom: 38px;
+    }
+    &__request-description {
+        @include text(24px, 400, $colorBlack);
+        margin-bottom: 72px;
+    }
+    &__request-button-wrp {
+        display: flex;
+    }
+    &__request-button-request {
+        @include button($colorWhite, $colorMain);
+        margin-right: 32px;
+        padding: 23px 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.005em;
+        transition: .3s, ease;
+        &:hover {
+            background-color: $colorHoverButton;
+            transition: .3s, ease;
+        }
+    }
+    &__request-button-contacts {
+        @include button($colorMain, transparent);
+        border: 3px solid $colorMain;
+        padding: 23px 87px;
+        text-transform: uppercase;
+        letter-spacing: 0.005em;
+        transition: .3s, ease;
+        &:hover {
+            background-color: $colorHoverButton;
+            color: $colorWhite;
+            border-color: $colorHoverButton;
+            transition: .3s, ease;
+        }
+    }
+}

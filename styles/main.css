@@ -1,0 +1,343 @@
+@charset "UTF-8";
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.img-svg {
+  opacity: 1;
+}
+
+.img-svg svg {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0 none;
+  background-color: transparent;
+  scroll-behavior: smooth;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 14px;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  cursor: pointer;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+label {
+  cursor: pointer;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: 'iner';
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+
+body {
+  background-color: #E9E9E9;
+  font-family: "iner", sans-serif, Arial;
+}
+
+.header {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header__wrp {
+  max-width: 1364px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+}
+
+.header__nav-wrp {
+  max-width: 900px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__lang-wrp {
+  max-width: 176px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-item:hover {
+  color: #5D5FEF;
+  cursor: pointer;
+}
+
+.lang-item:hover {
+  color: #5D5FEF;
+  cursor: pointer;
+}
+
+.nav-list-active,
+.lang-item-active {
+  color: #5D5FEF;
+}
+
+.main__idea {
+  background-image: url(../../../img/idea_bg.png);
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: top;
+  background-size: contain;
+  margin-bottom: 24px;
+}
+
+.main__idea-wrp {
+  max-width: 1364px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  min-height: 760px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__idea-text {
+  max-width: 640px;
+  width: 100%;
+}
+
+.main__idea-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.005em;
+  margin-bottom: 56px;
+  text-transform: uppercase;
+}
+
+.main__idea-description {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.005em;
+}
+
+.main__idea-img-wrp {
+  padding-top: 65px;
+}
+
+.main__request-wrp {
+  max-width: 1364px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__request-img-wrp {
+  margin-right: 32px;
+}
+
+.main__request-text {
+  max-width: 687px;
+  width: 100%;
+}
+
+.main__request-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #383737;
+  letter-spacing: 0.005em;
+  margin-bottom: 38px;
+}
+
+.main__request-description {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.005em;
+  margin-bottom: 72px;
+}
+
+.main__request-button-wrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main__request-button-request {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #5D5FEF;
+  margin-right: 32px;
+  padding: 23px 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  -webkit-transition: .3s, ease;
+  transition: .3s, ease;
+}
+
+.main__request-button-request:hover {
+  background-color: #4144F1;
+  -webkit-transition: .3s, ease;
+  transition: .3s, ease;
+}
+
+.main__request-button-contacts {
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: #5D5FEF;
+  background-color: transparent;
+  border: 3px solid #5D5FEF;
+  padding: 23px 87px;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  -webkit-transition: .3s, ease;
+  transition: .3s, ease;
+}
+
+.main__request-button-contacts:hover {
+  background-color: #4144F1;
+  color: #ffffff;
+  border-color: #4144F1;
+  -webkit-transition: .3s, ease;
+  transition: .3s, ease;
+}
+/*# sourceMappingURL=main.css.map */
