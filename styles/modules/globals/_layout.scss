@@ -49,16 +49,15 @@ body {
     color: $colorMain;
 }
 
-.main {
-    &__idea{
-        background-image: url(../img/idea_bg.png);
-        background-repeat: no-repeat;
-        background-position-x: left;
-        background-position-y: top;
-        background-size: contain;
-        margin-bottom: 24px;
-    }
-    &__idea-wrp{
+.main-idea {
+    background-image: url(../img/idea_bg.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: top;
+    background-size: contain;
+    margin-bottom: 24px;
+        
+    &__wrp{
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
@@ -68,22 +67,27 @@ body {
         justify-content: space-around;
         align-items: center;
     }
-    &__idea-text {
+    &__text {
         max-width: 640px;
         width: 100%;
     }
-    &__idea-title {
+    &__title {
         @include text(38px, 700, $colorWhite);
         margin-bottom: 56px;
         text-transform: uppercase;
     }
-    &__idea-description {
+    &__description {
         @include text(24px, 400, $colorWhite);
     }
-    &__idea-img-wrp {
+    &__img-wrp {
         padding-top: 65px;
     }
-    &__request-wrp {
+}
+
+.main-request {
+    margin-bottom: 92px;
+
+    &__wrp {
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
@@ -93,25 +97,25 @@ body {
         justify-content: center;
         align-items: center;
     }
-    &__request-img-wrp {
+    &__img-wrp {
         margin-right: 32px;
     }
-    &__request-text {
+    &__text {
         max-width: 687px;
         width: 100%;
     }
-    &__request-title {
+    &__title {
         @include text(28px, 600, #383737);
         margin-bottom: 38px;
     }
-    &__request-description {
+    &__description {
         @include text(24px, 400, $colorBlack);
         margin-bottom: 72px;
     }
-    &__request-button-wrp {
+    &__button-wrp {
         display: flex;
     }
-    &__request-button-request {
+    &__button-request {
         @include button($colorWhite, $colorMain);
         margin-right: 32px;
         padding: 23px 50px;
@@ -123,7 +127,7 @@ body {
             transition: .3s, ease;
         }
     }
-    &__request-button-contacts {
+    &__button-contacts {
         @include button($colorMain, transparent);
         border: 3px solid $colorMain;
         padding: 23px 87px;
@@ -137,7 +141,12 @@ body {
             transition: .3s, ease;
         }
     }
-    &__offer-wrp {
+}
+
+.main-offer {
+    margin-bottom: 92px;
+
+    &__wrp {
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
@@ -147,15 +156,15 @@ body {
         justify-content: space-around;
         align-items: center;
     }
-    &__offer-title {
+    &__title {
         @include text(32px, 600, $colorBlack);
         margin-bottom: 28px;
     }
-    &__offer-text {
+    &__text {
         @include text(24px, 400, $colorBlack);
         margin-bottom: 54px;
     }
-    &__offer-list {
+    &__list {
         width: 100%;
         max-width: 1200px;
         display: flex;
@@ -164,29 +173,30 @@ body {
         flex-wrap: wrap;
         margin-bottom: 48px;
     }
-    &__offer-item {
+    &__item {
         max-width: 276px;
         width: 100%;
         height: 276px;
+        padding: 48px 0 0;
+        background: $colorWhite;
+        border-radius: 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-    }
-    &__offer-item {
-        padding: 48px 0 0;
-        background: $colorWhite;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 8px;
     }
-    &__offer-item-img {
+    &__item-img {
         align-self: center;
         margin-bottom: 48px;
     }
-    &__offer-item-text {
+    &__item-text {
+        max-width: 205px;
+        width: 100%;
         @include text(18px, 500, $colorBlack);
+        text-transform: uppercase;
     }
-    &__offer-description{
+    &__description{
         max-width: 1200px;
         width: 100%;
         // height: 237px;
@@ -197,8 +207,9 @@ body {
         // flex-direction: column;
         // justify-content: center;
         // align-items: center;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
-    &__offer-description-text {
+    &__description-text {
         @include text(24px, 400, $colorBlack);
         max-width: 994px;
         width: 100%;

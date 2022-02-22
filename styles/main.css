@@ -202,7 +202,7 @@ body {
   color: #5D5FEF;
 }
 
-.main__idea {
+.main-idea {
   background-image: url(../img/idea_bg.png);
   background-repeat: no-repeat;
   background-position-x: left;
@@ -211,7 +211,7 @@ body {
   margin-bottom: 24px;
 }
 
-.main__idea-wrp {
+.main-idea__wrp {
   max-width: 1364px;
   width: 100%;
   margin: 0 auto;
@@ -227,12 +227,12 @@ body {
           align-items: center;
 }
 
-.main__idea-text {
+.main-idea__text {
   max-width: 640px;
   width: 100%;
 }
 
-.main__idea-title {
+.main-idea__title {
   font-size: 38px;
   font-weight: 700;
   color: #ffffff;
@@ -241,18 +241,22 @@ body {
   text-transform: uppercase;
 }
 
-.main__idea-description {
+.main-idea__description {
   font-size: 24px;
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 0.005em;
 }
 
-.main__idea-img-wrp {
+.main-idea__img-wrp {
   padding-top: 65px;
 }
 
-.main__request-wrp {
+.main-request {
+  margin-bottom: 92px;
+}
+
+.main-request__wrp {
   max-width: 1364px;
   width: 100%;
   margin: 0 auto;
@@ -269,16 +273,16 @@ body {
           align-items: center;
 }
 
-.main__request-img-wrp {
+.main-request__img-wrp {
   margin-right: 32px;
 }
 
-.main__request-text {
+.main-request__text {
   max-width: 687px;
   width: 100%;
 }
 
-.main__request-title {
+.main-request__title {
   font-size: 28px;
   font-weight: 600;
   color: #383737;
@@ -286,7 +290,7 @@ body {
   margin-bottom: 38px;
 }
 
-.main__request-description {
+.main-request__description {
   font-size: 24px;
   font-weight: 400;
   color: #000000;
@@ -294,13 +298,13 @@ body {
   margin-bottom: 72px;
 }
 
-.main__request-button-wrp {
+.main-request__button-wrp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.main__request-button-request {
+.main-request__button-request {
   font-size: 18px;
   font-weight: 500;
   border-radius: 8px;
@@ -314,13 +318,13 @@ body {
   transition: .3s, ease;
 }
 
-.main__request-button-request:hover {
+.main-request__button-request:hover {
   background-color: #4144F1;
   -webkit-transition: .3s, ease;
   transition: .3s, ease;
 }
 
-.main__request-button-contacts {
+.main-request__button-contacts {
   font-size: 18px;
   font-weight: 500;
   border-radius: 8px;
@@ -334,7 +338,7 @@ body {
   transition: .3s, ease;
 }
 
-.main__request-button-contacts:hover {
+.main-request__button-contacts:hover {
   background-color: #4144F1;
   color: #ffffff;
   border-color: #4144F1;
@@ -342,7 +346,11 @@ body {
   transition: .3s, ease;
 }
 
-.main__offer-wrp {
+.main-offer {
+  margin-bottom: 92px;
+}
+
+.main-offer__wrp {
   max-width: 1364px;
   width: 100%;
   margin: 0 auto;
@@ -361,7 +369,7 @@ body {
           align-items: center;
 }
 
-.main__offer-title {
+.main-offer__title {
   font-size: 32px;
   font-weight: 600;
   color: #000000;
@@ -369,7 +377,7 @@ body {
   margin-bottom: 28px;
 }
 
-.main__offer-text {
+.main-offer__text {
   font-size: 24px;
   font-weight: 400;
   color: #000000;
@@ -377,7 +385,7 @@ body {
   margin-bottom: 54px;
 }
 
-.main__offer-list {
+.main-offer__list {
   width: 100%;
   max-width: 1200px;
   display: -webkit-box;
@@ -394,10 +402,13 @@ body {
   margin-bottom: 48px;
 }
 
-.main__offer-item {
+.main-offer__item {
   max-width: 276px;
   width: 100%;
   height: 276px;
+  padding: 48px 0 0;
+  background: #ffffff;
+  border-radius: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,39 +422,38 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-.main__offer-item {
-  padding: 48px 0 0;
-  background: #ffffff;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
 }
 
-.main__offer-item-img {
+.main-offer__item-img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
   margin-bottom: 48px;
 }
 
-.main__offer-item-text {
+.main-offer__item-text {
+  max-width: 205px;
+  width: 100%;
   font-size: 18px;
   font-weight: 500;
   color: #000000;
   letter-spacing: 0.005em;
+  text-transform: uppercase;
 }
 
-.main__offer-description {
+.main-offer__description {
   max-width: 1200px;
   width: 100%;
   padding: 41px 103px;
   border-radius: 8px;
   background-color: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.main__offer-description-text {
+.main-offer__description-text {
   font-size: 24px;
   font-weight: 400;
   color: #000000;
