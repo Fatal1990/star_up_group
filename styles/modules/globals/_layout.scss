@@ -50,12 +50,12 @@ body {
 }
 
 .main-idea {
+    margin-bottom: 24px;
     background-image: url(../img/idea_bg.png);
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: top;
     background-size: contain;
-    margin-bottom: 24px;
         
     &__wrp{
         max-width: 1364px;
@@ -85,14 +85,16 @@ body {
 }
 
 .main-request {
-    margin-bottom: 92px;
+    height: 573px;
+    background-image: url(../img/polygon_13.png);
+    background-repeat: no-repeat;
+    background-position: right 0% top 42%;
 
     &__wrp {
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
         padding: 0 16px;
-        margin-bottom: 92px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -144,7 +146,6 @@ body {
 }
 
 .main-offer {
-    margin-bottom: 92px;
 
     &__wrp {
         max-width: 1364px;
@@ -217,14 +218,18 @@ body {
 }
 
 .main-purpose {
+    height: 573px;
     margin-bottom: 92px;
+    padding-top: 92px;
+    background-image: url(../img/polygon_14.png);
+    background-repeat: no-repeat;
+    background-position: left 0% bottom 42%;
 
     &__wrp {
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
         padding: 0 16px;
-        margin-bottom: 92px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
