@@ -273,3 +273,72 @@ body {
         }
     }
 }
+
+.main-realization {
+    height: 540px;
+    &__wrp {
+        max-width: 1364px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 3fr 1fr 3fr;
+        grid-row-gap: 116px;
+        align-items: center;
+    }
+    &__development-triangle {
+        background-image: url(../img/lightblue_triangle.svg);
+        background-repeat: no-repeat;
+        height: 134px;
+        width: 134px;
+        justify-self: center;
+    }
+    &__development-triangle-text {
+        @include text(24px, 700, $colorWhite);
+        letter-spacing: 0.07em;
+        height: 111px;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__development-numer {
+        @include text(48px, 700, $colorDark);
+        justify-self: right;
+    }
+    &__development-text {
+        @include text(28px, 600, $colorDark);
+        justify-self: left;
+    }
+    &__content-text {
+        @include text(28px, 600, $colorDark);
+        justify-self: right;
+    }
+    &__content-triangle{
+        background-image: url(../img/green_triangle.svg);
+        background-repeat: no-repeat;
+        height: 134px;
+        width: 134px;
+        justify-self: right;
+        position: relative;
+        &::before {
+            content: 'Aa';
+            @include text(36px, 400, $colorWhite);
+            position: absolute;
+            right: 23px;
+            bottom: 18px;
+        }
+        &::after {
+            content: url(../icons/content_icon.svg);
+            position: absolute;
+            left: 50px;
+            top: 43px;
+        }
+    }
+    &__content-numer {
+        @include text(48px, 700, $colorDark);
+        justify-self: left;
+        padding-left: 64px;
+    }
+}
