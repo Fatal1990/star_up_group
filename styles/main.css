@@ -124,13 +124,18 @@ label {
 }
 
 @font-face {
-  font-family: 'iner';
+  font-family: 'Inter', sans-serif;
   src: url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono', monospace;
+  src: url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 }
 
 body {
   background-color: #E9E9E9;
-  font-family: "iner", sans-serif, Arial;
+  font-family: "Inter", sans-serif, Arial;
 }
 
 .header {
@@ -254,7 +259,7 @@ body {
 
 .main-request {
   height: 573px;
-  background-image: url(../img/polygon_13.png);
+  background-image: url(../img/Polygon_13.png);
   background-repeat: no-repeat;
   background-position: right 0% top 42%;
 }
@@ -464,7 +469,7 @@ body {
   height: 573px;
   margin-bottom: 92px;
   padding-top: 92px;
-  background-image: url(../img/polygon_14.png);
+  background-image: url(../img/Polygon_14.png);
   background-repeat: no-repeat;
   background-position: left 0% bottom 42%;
 }
@@ -572,31 +577,26 @@ body {
 }
 
 .main-realization__development-triangle {
-  background-image: url(../img/lightblue_triangle.svg);
+  background-image: url(../img/lightBlue_triangle.svg);
   background-repeat: no-repeat;
   height: 134px;
   width: 134px;
   -ms-grid-column-align: center;
       justify-self: center;
+  position: relative;
 }
 
-.main-realization__development-triangle-text {
+.main-realization__development-triangle::after {
+  content: '<div>';
+  position: absolute;
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.005em;
   letter-spacing: 0.07em;
-  height: 111px;
-  width: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: 'IBM Plex Mono', monospace, sans-serif, Arial;
+  right: 40px;
+  top: 45px;
 }
 
 .main-realization__development-numer {
@@ -606,6 +606,7 @@ body {
   letter-spacing: 0.005em;
   -ms-grid-column-align: right;
       justify-self: right;
+  margin-right: 48px;
 }
 
 .main-realization__development-text {
@@ -615,6 +616,7 @@ body {
   letter-spacing: 0.005em;
   -ms-grid-column-align: left;
       justify-self: left;
+  margin-left: 48px;
 }
 
 .main-realization__content-text {
@@ -624,6 +626,7 @@ body {
   letter-spacing: 0.005em;
   -ms-grid-column-align: right;
       justify-self: right;
+  margin-right: 48px;
 }
 
 .main-realization__content-triangle {
@@ -661,6 +664,43 @@ body {
   letter-spacing: 0.005em;
   -ms-grid-column-align: left;
       justify-self: left;
-  padding-left: 64px;
+  margin-left: 48px;
+}
+
+.main-realization__promotion-numer {
+  font-size: 48px;
+  font-weight: 700;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin-right: 48px;
+}
+
+.main-realization__promotion-triangle {
+  background-image: url(../img/blue_triangle.svg);
+  background-repeat: no-repeat;
+  height: 134px;
+  width: 134px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+.main-realization__promotion-triangle::after {
+  content: url(../icons/TrandPromotion_icon.svg);
+  position: absolute;
+  top: 36px;
+  left: 17px;
+}
+
+.main-realization__promotion-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  margin-left: 48px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -86,7 +86,7 @@ body {
 
 .main-request {
     height: 573px;
-    background-image: url(../img/polygon_13.png);
+    background-image: url(../img/Polygon_13.png);
     background-repeat: no-repeat;
     background-position: right 0% top 42%;
 
@@ -221,7 +221,7 @@ body {
     height: 573px;
     margin-bottom: 92px;
     padding-top: 92px;
-    background-image: url(../img/polygon_14.png);
+    background-image: url(../img/Polygon_14.png);
     background-repeat: no-repeat;
     background-position: left 0% bottom 42%;
 
@@ -288,32 +288,36 @@ body {
         align-items: center;
     }
     &__development-triangle {
-        background-image: url(../img/lightblue_triangle.svg);
+        background-image: url(../img/lightBlue_triangle.svg);
         background-repeat: no-repeat;
         height: 134px;
         width: 134px;
         justify-self: center;
-    }
-    &__development-triangle-text {
-        @include text(24px, 700, $colorWhite);
-        letter-spacing: 0.07em;
-        height: 111px;
-        width: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        &::after {
+            content: '<div>';
+            position: absolute;
+            @include text(24px, 700, $colorWhite);
+            letter-spacing: 0.07em;
+            font-family: 'IBM Plex Mono', monospace, sans-serif, Arial;
+            right: 40px;
+            top: 45px;
+        }
     }
     &__development-numer {
         @include text(48px, 700, $colorDark);
         justify-self: right;
+        margin-right: 48px;
     }
     &__development-text {
         @include text(28px, 600, $colorDark);
         justify-self: left;
+        margin-left: 48px;
     }
     &__content-text {
         @include text(28px, 600, $colorDark);
         justify-self: right;
+        margin-right: 48px;
     }
     &__content-triangle{
         background-image: url(../img/green_triangle.svg);
@@ -339,6 +343,30 @@ body {
     &__content-numer {
         @include text(48px, 700, $colorDark);
         justify-self: left;
-        padding-left: 64px;
+        margin-left: 48px;
+    }
+    &__promotion-numer {
+        @include text(48px, 700, $colorDark);
+        justify-self: right;
+        margin-right: 48px;
+    }
+    &__promotion-triangle {
+        background-image: url(../img/blue_triangle.svg);
+        background-repeat: no-repeat;
+        height: 134px;
+        width: 134px;
+        justify-self: center;
+        position: relative;
+        &::after {
+            content: url(../icons/TrandPromotion_icon.svg);
+            position: absolute;
+            top: 36px;
+            left: 17px;
+        }
+    }
+    &__promotion-text {
+        @include text(28px, 600, $colorDark);
+        justify-self: left;
+        margin-left: 48px;
     }
 }
