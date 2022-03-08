@@ -557,6 +557,9 @@ body {
 
 .main-realization {
   height: 540px;
+  background-image: url(../img/Polygon_15.png);
+  background-repeat: no-repeat;
+  background-position: right 0% top 55%;
 }
 
 .main-realization__wrp {
@@ -564,16 +567,38 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+.main-realization__title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 59px;
+}
+
+.main-realization__wrp-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
   -ms-grid-columns: 3fr 1fr 3fr;
       grid-template-columns: 3fr 1fr 3fr;
-  grid-row-gap: 116px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main-realization__development-numer {
+  font-size: 48px;
+  font-weight: 700;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin-right: 48px;
 }
 
 .main-realization__development-triangle {
@@ -599,16 +624,6 @@ body {
   top: 45px;
 }
 
-.main-realization__development-numer {
-  font-size: 48px;
-  font-weight: 700;
-  color: #3A3A3A;
-  letter-spacing: 0.005em;
-  -ms-grid-column-align: right;
-      justify-self: right;
-  margin-right: 48px;
-}
-
 .main-realization__development-text {
   font-size: 28px;
   font-weight: 600;
@@ -619,14 +634,46 @@ body {
   margin-left: 48px;
 }
 
-.main-realization__content-text {
-  font-size: 28px;
-  font-weight: 600;
+.main-realization__development-arrow {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #3A3A3A;
+  width: 2px;
+  height: 86px;
+  position: relative;
+}
+
+.main-realization__development-arrow::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  border-left: 2px solid #3A3A3A;
+  border-bottom: 2px solid #3A3A3A;
+  border-radius: 1px;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+.main-realization__content-numer {
+  font-size: 48px;
+  font-weight: 700;
   color: #3A3A3A;
   letter-spacing: 0.005em;
-  -ms-grid-column-align: right;
-      justify-self: right;
-  margin-right: 48px;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  margin-left: 48px;
 }
 
 .main-realization__content-triangle {
@@ -636,6 +683,8 @@ body {
   width: 134px;
   -ms-grid-column-align: right;
       justify-self: right;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
   position: relative;
 }
 
@@ -657,14 +706,28 @@ body {
   top: 43px;
 }
 
-.main-realization__content-numer {
-  font-size: 48px;
-  font-weight: 700;
+.main-realization__content-text {
+  font-size: 28px;
+  font-weight: 600;
   color: #3A3A3A;
   letter-spacing: 0.005em;
-  -ms-grid-column-align: left;
-      justify-self: left;
-  margin-left: 48px;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin-right: 48px;
+}
+
+.main-realization__content-arrow {
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .main-realization__promotion-numer {
@@ -672,6 +735,8 @@ body {
   font-weight: 700;
   color: #3A3A3A;
   letter-spacing: 0.005em;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
   -ms-grid-column-align: right;
       justify-self: right;
   margin-right: 48px;
@@ -684,6 +749,8 @@ body {
   width: 134px;
   -ms-grid-column-align: center;
       justify-self: center;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
   position: relative;
 }
 
@@ -699,6 +766,8 @@ body {
   font-weight: 600;
   color: #3A3A3A;
   letter-spacing: 0.005em;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
   -ms-grid-column-align: left;
       justify-self: left;
   margin-left: 48px;

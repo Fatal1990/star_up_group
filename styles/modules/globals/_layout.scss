@@ -276,16 +276,31 @@ body {
 
 .main-realization {
     height: 540px;
+    background-image: url(../img/Polygon_15.png);
+    background-repeat: no-repeat;
+    background-position: right 0% top 55%;
     &__wrp {
         max-width: 1364px;
         width: 100%;
         margin: 0 auto;
         padding: 0 16px;
+    }
+    &__title {
+        @include text(32px, 600, $colorDark);
+        line-height: 42px;
+        text-align: center;
+        margin-bottom: 59px;
+    }
+    &__wrp-grid {
         display: grid;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
         grid-template-columns: 3fr 1fr 3fr;
-        grid-row-gap: 116px;
         align-items: center;
+    }
+    &__development-numer {
+        @include text(48px, 700, $colorDark);
+        justify-self: right;
+        margin-right: 48px;
     }
     &__development-triangle {
         background-image: url(../img/lightBlue_triangle.svg);
@@ -304,20 +319,38 @@ body {
             top: 45px;
         }
     }
-    &__development-numer {
-        @include text(48px, 700, $colorDark);
-        justify-self: right;
-        margin-right: 48px;
-    }
     &__development-text {
         @include text(28px, 600, $colorDark);
         justify-self: left;
         margin-left: 48px;
     }
-    &__content-text {
-        @include text(28px, 600, $colorDark);
-        justify-self: right;
-        margin-right: 48px;
+    &__development-arrow {
+        grid-column-start: 2;
+        align-self: center;
+        justify-self: center; 
+        background-color: $colorDark;
+        width: 2px;
+        height: 86px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            bottom: 0;
+            border-left: 2px solid $colorDark;
+            border-bottom: 2px solid $colorDark;
+            border-radius: 1px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(315deg);
+        }      
+    }
+    &__content-numer {
+        @include text(48px, 700, $colorDark);
+        grid-row-start: 3;
+        grid-column-start: 3;
+        justify-self: left;
+        margin-left: 48px;
     }
     &__content-triangle{
         background-image: url(../img/green_triangle.svg);
@@ -325,6 +358,7 @@ body {
         height: 134px;
         width: 134px;
         justify-self: right;
+        grid-column-start: 2;
         position: relative;
         &::before {
             content: 'Aa';
@@ -340,13 +374,21 @@ body {
             top: 43px;
         }
     }
-    &__content-numer {
-        @include text(48px, 700, $colorDark);
-        justify-self: left;
-        margin-left: 48px;
+    &__content-text {
+        @include text(28px, 600, $colorDark);
+        grid-row-start: 3;
+        justify-self: right;
+        margin-right: 48px;
+    }
+    &__content-arrow {
+        grid-row-start: 4;
+        grid-column-start: 2;
+        align-self: center;
+        justify-self: center;
     }
     &__promotion-numer {
         @include text(48px, 700, $colorDark);
+        grid-row-start: 5;
         justify-self: right;
         margin-right: 48px;
     }
@@ -356,6 +398,7 @@ body {
         height: 134px;
         width: 134px;
         justify-self: center;
+        grid-row-start: 5;
         position: relative;
         &::after {
             content: url(../icons/TrandPromotion_icon.svg);
@@ -366,6 +409,7 @@ body {
     }
     &__promotion-text {
         @include text(28px, 600, $colorDark);
+        grid-row-start: 5;
         justify-self: left;
         margin-left: 48px;
     }
