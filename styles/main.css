@@ -830,8 +830,8 @@ body {
 .main-advantage__workwith-wrp {
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 92px;
   margin: 0 auto;
+  margin-bottom: 92px;
 }
 
 .main-advantage__workwith-title {
@@ -899,5 +899,162 @@ body {
   letter-spacing: 0.005em;
   text-transform: uppercase;
   text-align: center;
+}
+
+.main-advantage__advantage-wrp {
+  max-width: 994px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-advantage__advantage-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #3A3A3A;
+  letter-spacing: 0.005em;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.main-advantage__advantage-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 1380px;
+}
+
+.main-advantage__advantage-list-left {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.main-advantage__advantage-list-item-wrp {
+  width: 481px;
+  height: 481px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-advantage__advantage-list-item-wrp.first-circle {
+  background: linear-gradient(215.97deg, #EF5DA8 11.42%, #5D5FEF 87.83%);
+  margin-bottom: 148px;
+  position: relative;
+}
+
+.main-advantage__advantage-list-item-wrp.first-circle::after {
+  content: url(../icons/ArrowRight_icon.svg);
+  position: absolute;
+  right: -125px;
+  bottom: 169px;
+}
+
+.main-advantage__advantage-list-item-wrp.second-circle {
+  background: linear-gradient(218.42deg, #FFB07D 16.12%, #FF7087 86.01%);
+  position: relative;
+}
+
+.main-advantage__advantage-list-item-wrp.second-circle::after {
+  content: url(../icons/ArrowRight_icon.svg);
+  position: absolute;
+  right: -125px;
+  bottom: 169px;
+}
+
+.main-advantage__advantage-list-item-wrp.third-circle {
+  background: linear-gradient(216.12deg, #1DCDFE 14.56%, #5D5FEF 84.1%);
+  margin-top: 269px;
+  margin-bottom: 148px;
+  position: relative;
+}
+
+.main-advantage__advantage-list-item-wrp.third-circle::before {
+  content: url(../icons/ArrowLeft_icon.svg);
+  position: absolute;
+  left: -125px;
+  bottom: 110px;
+}
+
+.main-advantage__advantage-list-item-wrp.fourth-circle {
+  background: linear-gradient(212.55deg, #E78DD2 17.05%, #3B2D60 85.94%);
+}
+
+.main-advantage__advantage-list-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-advantage__advantage-list-img {
+  margin-bottom: 24px;
+}
+
+.main-advantage__advantage-list-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.005em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.main-advantage__advantage-list-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.005em;
+  line-height: 20px;
+  text-align: center;
+  max-width: 350px;
+}
+
+.main-advantage__advantage-list-right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 /*# sourceMappingURL=main.css.map */

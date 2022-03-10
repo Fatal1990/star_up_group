@@ -466,8 +466,8 @@ body {
     &__workwith-wrp {
         width: 100%;
         max-width: 1200px;
-        margin-bottom: 92px;
         margin: 0 auto;
+        margin-bottom: 92px;
     }
     &__workwith-title{
         @include text(24px, 400, $colorBlack);
@@ -505,5 +505,100 @@ body {
         @include text(18px, 500, $colorBlack);
         text-transform: uppercase;
         text-align: center;
+    }
+    &__advantage-wrp {
+        max-width: 994px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &__advantage-title {
+        @include text(32px, 600, $colorDark);
+        text-align: center;
+        margin-bottom: 64px;
+    }
+    &__advantage-list {
+        display: flex;
+        height: 1380px;
+    }
+    &__advantage-list-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__advantage-list-item-wrp {
+        width: 481px;
+        height: 481px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        &.first-circle {
+            background: linear-gradient(215.97deg, #EF5DA8 11.42%, #5D5FEF 87.83%);
+            margin-bottom: 148px;
+            position: relative;
+            &::after {
+                content: url(../icons/ArrowRight_icon.svg);
+                position: absolute;
+                right: -125px;
+                bottom: 169px;
+            }
+        }
+        &.second-circle {
+            background: linear-gradient(218.42deg, #FFB07D 16.12%, #FF7087 86.01%);
+            position: relative;
+            &::after {
+                content: url(../icons/ArrowRight_icon.svg);
+                position: absolute;
+                right: -125px;
+                bottom: 169px;
+            }
+        }
+        &.third-circle {
+            background: linear-gradient(216.12deg, #1DCDFE 14.56%, #5D5FEF 84.1%);
+            margin-top: 269px;
+            margin-bottom: 148px;
+            position: relative;
+            &::before {
+                content: url(../icons/ArrowLeft_icon.svg);
+                position: absolute;
+                left: -125px;
+                bottom: 110px;
+            }
+        }
+        &.fourth-circle {
+            background: linear-gradient(212.55deg, #E78DD2 17.05%, #3B2D60 85.94%);
+        }
+    }
+    &__advantage-list-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__advantage-list-img {
+        margin-bottom: 24px;
+    }
+    &__advantage-list-title {
+        @include text (20px, 500, $colorWhite);
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    &__advantage-list-text {
+        @include text(16px, 400, $colorWhite);
+        line-height: 20px;
+        text-align: center;
+        max-width: 350px;
+    }
+    &__advantage-list-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        // justify-content: flex-end;
+        align-items: flex-end;
     }
 }
