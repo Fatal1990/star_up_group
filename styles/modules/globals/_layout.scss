@@ -126,7 +126,10 @@ body {
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
-            transition: .3s, ease;
+            transition: .3s, ease-in;
+        }
+        &:active {
+            background-color: $colorActiveButton;
         }
     }
     &__button-contacts {
@@ -140,7 +143,11 @@ body {
             background-color: $colorHoverButton;
             color: $colorWhite;
             border-color: $colorHoverButton;
-            transition: .3s, ease;
+            transition: .3s, ease-in;
+        }
+        &:active {
+            background-color: $colorActiveButton;
+            border-color: $colorActiveButton;
         }
     }
 }
@@ -258,7 +265,10 @@ body {
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
-            transition: .3s, ease;
+            transition: .3s, ease-in;
+        }
+        &:active {
+            background-color: $colorActiveButton;
         }
     }
     &__button-about {
@@ -272,7 +282,11 @@ body {
             background-color: $colorHoverButton;
             color: $colorWhite;
             border-color: $colorHoverButton;
-            transition: .3s, ease;
+            transition: .3s, ease-in;
+        }
+        &:active {
+            background-color: $colorActiveButton;
+            border-color: $colorActiveButton;
         }
     }
 }
@@ -457,6 +471,16 @@ body {
 }
 
 .main-advantage {
+    background-image: url(../img/Polygon_16.png);
+    background-repeat: no-repeat;
+    background-position: left 0% top -79%;
+    margin-bottom: 224px;
+
+    &__wrp-bg {
+        background-image: url(../img/Polygon_17.png);
+        background-repeat: no-repeat;
+        background-position: right 0% top 155%;    
+    }
     &__wrp {
         max-width: 1364px;
         width: 100%;
@@ -559,14 +583,13 @@ body {
         }
         &.third-circle {
             background: linear-gradient(216.12deg, #1DCDFE 14.56%, #5D5FEF 84.1%);
-            margin-top: 269px;
             margin-bottom: 148px;
             position: relative;
             &::before {
                 content: url(../icons/ArrowLeft_icon.svg);
                 position: absolute;
                 left: -125px;
-                bottom: 110px;
+                bottom: 100px;
             }
         }
         &.fourth-circle {
@@ -598,7 +621,206 @@ body {
         width: 50%;
         display: flex;
         flex-direction: column;
-        // justify-content: flex-end;
         align-items: flex-end;
+        padding-top: 269px;
+    }
+}
+
+.main-branding {
+    background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
+
+    &__wrp {
+        max-width: 1364px;
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+        padding: 0 16px;
+        padding-top: 197px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__brand-circle-wrp {
+        max-width: 265px;
+        width: 100%;
+        position: relative;
+    }
+    &__brand-circle {
+        max-width: 265px;
+        width: 100%;
+        height: 265px;
+        border-radius: 50%;
+        background-color: $colorDark;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 32px;
+        right: 0;
+    }
+    &__brand-title {
+        @include text(36px, 500, $colorWhite);
+        text-transform: uppercase;
+    }
+    &__brand-text-wrp {
+        max-width: 610px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__brand-text-title {
+        @include text(32px, 600, $colorWhite);
+        line-height: 42px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    &__brand-text-line {
+        background-color: $colorWhite;
+        height: 2px;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    &__brand-text-main {
+        @include text(24px, 600, $colorWhite);
+        line-height: 31px;
+        text-align: center;
+    }
+}
+
+.main-marketing {
+    background-color: $colorDark;
+
+    &__wrp {
+        max-width: 1364px;
+        width: 100%;
+        height: 1168px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__blocks-wrp {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+    &__blocks-list {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: -106px;
+    }
+    &__blocks-item {
+        max-width: 276px;
+        width: 100%;
+        height: 276px;
+        padding: 48px 0 0;
+        background: $colorWhite;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__blocks-img {
+        align-self: center;
+        margin-bottom: 48px;
+        width: 64px;
+        height: 64px;
+    }
+    &__blocks-text {
+        max-width: 205px;
+        width: 100%;
+        @include text(18px, 500, $colorBlack);
+        line-height: 23px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__body-wrp{
+        padding-top: 250px;
+        margin-bottom: 124px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__body-title {
+        max-width: 755px;
+        width: 100%;
+        @include text(28px, 500, $colorWhite);
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 101px;
+    }
+    &__body-list {
+        max-width: 1206px;
+        width: 100%;
+        &:last-child {
+            border-bottom: 2px solid $colorWhite;
+        }
+    }
+    &__body-list-item {
+        height: 134px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top: 2px solid $colorWhite;
+    }
+    &__body-list-title {
+        max-width: 173px;
+        width: 100%;
+        @include text(24px, 500, $colorWhite);
+        line-height: 31px;
+        text-align: right;
+        margin-right: 32px;
+    }
+    &__body-list-img{
+        margin-right: 32px;
+    }
+    &__body-list-text {
+        max-width: 789px;
+        width: 100%;
+        @include text(24px, 500, $colorWhite);
+        line-height: 31px;
+        text-align: left;
+    }
+    &__request-wrp {
+        max-width: 790px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__request-title {
+        @include text(28px, 500, $colorWhite);
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    &__request-button{
+        max-width: 378px;
+        width: 100%;
+        height: 69px;
+        @include button($colorDark, $colorWhite);
+        text-transform: uppercase;
+        transition: 0.3 ease;
+        &:hover {
+            background: linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
+            transition: 0.3 ease-in;
+        }
+        &:active {
+           background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
+        }
     }
 }
