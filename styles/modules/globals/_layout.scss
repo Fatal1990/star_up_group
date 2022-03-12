@@ -44,9 +44,8 @@ body {
     cursor: pointer;
 }
 
-.nav-list-active,
-.lang-item-active {
-    color: $colorMain;
+.main {
+    margin-bottom: 101px;
 }
 
 .main-idea {
@@ -56,7 +55,6 @@ body {
     background-position-x: left;
     background-position-y: top;
     background-size: contain;
-        
     &__wrp{
         max-width: 1364px;
         width: 100%;
@@ -89,7 +87,6 @@ body {
     background-image: url(../img/Polygon_13.png);
     background-repeat: no-repeat;
     background-position: right 0% top 42%;
-
     &__wrp {
         max-width: 1364px;
         width: 100%;
@@ -122,7 +119,6 @@ body {
         margin-right: 32px;
         padding: 23px 50px;
         text-transform: uppercase;
-        letter-spacing: 0.005em;
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
@@ -137,7 +133,6 @@ body {
         border: 3px solid $colorMain;
         padding: 23px 87px;
         text-transform: uppercase;
-        letter-spacing: 0.005em;
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
@@ -153,7 +148,6 @@ body {
 }
 
 .main-offer {
-
     &__wrp {
         max-width: 1364px;
         width: 100%;
@@ -234,7 +228,6 @@ body {
     background-image: url(../img/Polygon_14.png);
     background-repeat: no-repeat;
     background-position: left 0% bottom 42%;
-
     &__wrp {
         max-width: 1364px;
         width: 100%;
@@ -261,7 +254,6 @@ body {
         margin-right: 32px;
         padding: 23px 50px;
         text-transform: uppercase;
-        letter-spacing: 0.005em;
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
@@ -276,7 +268,6 @@ body {
         border: 3px solid $colorMain;
         padding: 23px 87px;
         text-transform: uppercase;
-        letter-spacing: 0.005em;
         transition: .3s, ease;
         &:hover {
             background-color: $colorHoverButton;
@@ -475,7 +466,6 @@ body {
     background-repeat: no-repeat;
     background-position: left 0% top -79%;
     margin-bottom: 224px;
-
     &__wrp-bg {
         background-image: url(../img/Polygon_17.png);
         background-repeat: no-repeat;
@@ -628,7 +618,6 @@ body {
 
 .main-branding {
     background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
-    
     &__wrp {
         height: 600px;
         margin: 0 auto;
@@ -690,9 +679,9 @@ body {
 .main-marketing {
     background-color: $colorDark;
     padding-bottom: 86px;
-
     &__wrp {
         height: 1168px;
+        padding: 0 16px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -813,4 +802,167 @@ body {
            background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
         }
     }
+}
+
+.main-form {    
+    &__wrp {
+        padding-top: 36px;
+    }
+    &__title-wrp {
+        height: 225px;
+        padding: 0 16px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
+    }
+    &__title {
+        max-width: 790px;
+        width: 100%;
+        @include text (36px, 600, $colorWhite);
+        line-height: 47px;
+        text-align: center;
+    }
+    &__form-wrp {
+        max-width: 604px;
+        width: 100%;
+        padding-top: 36px;
+        margin: 0 auto;
+        background-color: $colorWhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__form-title {
+        @include text(24px, 400, $colorDark);
+        line-height: 31px;
+        letter-spacing: 0.01em;
+        margin-bottom: 52px;
+    }
+    &__form-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 36px;
+    }
+    &__form-list-wrp {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 52px;
+    }
+    &__form-item {
+        width: 378px;
+        padding: 12px;
+        @include text(16px, 400, $colorDark);
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        background-color: $colorGrey;
+        border-radius: 4px;
+        margin-bottom: 32px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__form-list-text-wrp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 52px;
+    }
+    &__form-list-text-img {
+    margin-right: 16px;
+    }
+    &__form-list-text {
+        @include text(14px, 400, $colorBlack);
+        line-height: 18px;
+        letter-spacing: 0.01em;
+    }
+    &__form-button {
+        max-width: 276px;
+        width: 100%;
+        height: 51px;
+        @include button($colorWhite, $colorMain);
+        text-transform: uppercase;
+        transition: .3s, ease;
+        &:hover {
+            background-color: $colorHoverButton;
+            transition: .3s, ease-in;
+        }
+        &:active {
+            background-color: $colorActiveButton;
+        }
+    }
+}
+
+.footer {
+    background-color: $colorLightGrey;
+    margin-bottom: 32px;
+    &__wrp {
+        padding: 60px 16px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__nav-wrp {
+        max-width: 994px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 91px;
+    }
+    &__nav-item {
+        @include text(18px, 500, $colorDark);
+        line-height: 23px;
+        text-align: center;
+        &:hover {
+            color: $colorMain;
+            cursor: pointer;
+        }
+    }
+    &__nav-mob-line {
+        max-width: 312px;
+        width: 100%;
+        height: 2px;
+        background-color: $colorDark;
+        display: none;
+    }
+    &__agreement-wrp {
+        max-width: 584px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 48px;
+    }
+    &__agreement-item {
+        @include text(18px, 500, $colorDark);
+        line-height: 23px;
+        text-align: center;
+        &:hover {
+            color: $colorMain;
+            cursor: pointer;
+        }
+    }
+    &__agreement-dot {
+        width: 8px;
+        height: 8px;
+        background-color: $colorDark;
+        border-radius: 50%;
+    }
+    &__copyright {
+        @include text(18px, 500, $colorDark);
+        line-height: 23px;
+        text-align: center;
+    }
+}
+
+.nav-list-active,
+.lang-item-active {
+    color: $colorMain;
 }
