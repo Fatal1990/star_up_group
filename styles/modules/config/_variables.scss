@@ -18,14 +18,5 @@ $colorWhite: #ffffff;
 $colorLightGrey: #F5F5F5;
 $colorGrey: #E9E9E9;
 $colorBlack: #000000;
-
-
-$startAdaptive: 1472px;
-
-
-@mixin start {
-    @media (max-width: $startAdaptive) {
-      @content;
-    }
-  }
-  
+$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+$shadowButt: 0px 0px 17px rgba(0, 0, 0, 0.4);

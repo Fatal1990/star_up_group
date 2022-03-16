@@ -5,33 +5,24 @@ body {
 
 .header {
     background-color: $colorWhite;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.header {
+    box-shadow: $shadow;
     &__wrp {
-    max-width: 1364px;
-    width: 100%;
-    margin: 0 auto;
     padding: 3px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexCenterSb;
     @include text(18px, 500, $colorDark);
+    @include _1472 {
+        justify-content: space-around;
+    }
     }
     &__nav-wrp {
         max-width: 900px;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexCenterSb;
     }
     &__lang-wrp {
         max-width: 176px;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexCenterSb;
     }
 }
 .nav-item:hover {
@@ -55,27 +46,43 @@ body {
     background-position-x: left;
     background-position-y: top;
     background-size: contain;
-    &__wrp{
-        max-width: 1364px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
-        min-height: 760px;
+    &__wrp {
+        height: 760px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        @include _1472 {
+            @include paddStart;
+        }
+        @include _425 {
+            height: auto;
+            display: inline-block;
+        }
     }
     &__text {
         max-width: 640px;
         width: 100%;
+        @include _425 {
+            text-align: center;
+        }
     }
     &__title {
         @include text(38px, 700, $colorWhite);
-        margin-bottom: 56px;
+        line-height: 49px;
         text-transform: uppercase;
+        margin-bottom: 56px;
+        @include _425 {
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 0;
+        }
     }
     &__description {
         @include text(24px, 400, $colorWhite);
+        @include _425 {
+            font-size: 14px;
+            text-align: center;
+        }
     }
     &__img-wrp {
         padding-top: 65px;
@@ -87,41 +94,68 @@ body {
     background-image: url(../img/Polygon_13.png);
     background-repeat: no-repeat;
     background-position: right 0% top 42%;
+    @include _425 {
+        @include sectionMob;
+    }
     &__wrp {
-        max-width: 1364px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
+        @include _1472 {
+            @include paddStart;
+        }
+        @include _425 {
+            flex-direction: column;
+        }
     }
     &__img-wrp {
         margin-right: 32px;
+        @include _425 {
+            @include sizeImgMob;
+            margin-right: 0;
+            margin-bottom: 32px;
+        }
     }
     &__text {
         max-width: 687px;
         width: 100%;
+        @include _425 {
+            max-width: 312px;
+        }
     }
     &__title {
         @include text(28px, 600, #383737);
         margin-bottom: 38px;
+        @include _425 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
     }
     &__description {
         @include text(24px, 400, $colorBlack);
         margin-bottom: 72px;
+        @include _425 {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
     }
     &__button-wrp {
-        display: flex;
+        @include flexStartCenter;
+        @include _425 {
+            justify-content: center;
+        }
     }
     &__button-request {
         @include button($colorWhite, $colorMain);
         margin-right: 32px;
-        padding: 23px 50px;
         text-transform: uppercase;
         transition: .3s, ease;
+        @include _425 {
+            @include buttonMob;
+        }
         &:hover {
             background-color: $colorHoverButton;
+            box-shadow: $shadowButt;
             transition: .3s, ease-in;
         }
         &:active {
@@ -131,13 +165,16 @@ body {
     &__button-contacts {
         @include button($colorMain, transparent);
         border: 3px solid $colorMain;
-        padding: 23px 87px;
         text-transform: uppercase;
         transition: .3s, ease;
+        @include _425 {
+            @include buttonMob;
+        }
         &:hover {
             background-color: $colorHoverButton;
             color: $colorWhite;
             border-color: $colorHoverButton;
+            box-shadow: $shadowButt;
             transition: .3s, ease-in;
         }
         &:active {
@@ -148,51 +185,74 @@ body {
 }
 
 .main-offer {
+    @include _425 {
+        margin-bottom: 32px;
+    }
     &__wrp {
-        max-width: 1364px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
-        display: flex;
-        flex-direction: column;
+        @include flexCenterColumn;
         justify-content: space-around;
-        align-items: center;
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__title {
         @include text(32px, 600, $colorBlack);
+        text-align: center;
         margin-bottom: 28px;
+        @include _425 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
     }
     &__text {
         @include text(24px, 400, $colorBlack);
+        text-align: center;
         margin-bottom: 54px;
+        @include _425 {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
     }
     &__list {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include sizeList;
+        @include flexCenterSb;
         flex-wrap: wrap;
         margin-bottom: 48px;
+        @include _1135 {
+            height: 584px;
+            justify-content: space-evenly;
+        }
+        @include _583 {
+            height: 1134px;
+            margin-bottom: 20px;
+        }
+        @include _425 {
+            height: auto;
+            margin-bottom: 0;
+        }
+        @include _375 {
+            justify-content: space-between;
+        }
     }
     &__item {
-        max-width: 276px;
-        width: 100%;
-        height: 276px;
+        @include sizeItem;
         padding: 48px 0 0;
         background: $colorWhite;
         border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
         justify-content: flex-start;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $shadow;
+        @include _425 {
+            @include sizeItemMob;
+            padding: 24px 0 0;
+            margin-bottom: 20px;
+        }
     }
     &__item-img {
-        align-self: center;
-        margin-bottom: 48px;
-        width: 64px;
-        height: 64px;
+        @include sizeImgItem;
+        @include _425 {
+            @include sizeImgItemMob;
+        }
     }
     &__item-text {
         max-width: 205px;
@@ -200,43 +260,55 @@ body {
         @include text(18px, 500, $colorBlack);
         text-transform: uppercase;
         text-align: center;
+        @include _425 {
+            font-size: 13px;
+            max-width: 122px;
+        }
     }
     &__description{
         max-width: 1200px;
         width: 100%;
-        // height: 237px;
-        padding: 41px 103px;
+        padding: 40px 102px;
         border-radius: 8px;
         background-color: $colorWhite;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $shadow;
+        @include _1135 {
+            padding: 20px 51px;
+        }
+        @include _425 {
+            padding: 14px 18px;
+        }
     }
     &__description-text {
         @include text(24px, 400, $colorBlack);
         max-width: 994px;
         width: 100%;
+        @include _425{
+            font-size: 14px;
+            display: inline;
+        }
     }
 }
 
 .main-purpose {
     height: 573px;
     margin-bottom: 92px;
-    padding-top: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     background-image: url(../img/Polygon_14.png);
     background-repeat: no-repeat;
     background-position: left 0% bottom 42%;
+    @include _425 {
+        @include sectionMob;
+    }
     &__wrp {
-        max-width: 1364px;
         width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
-        display: flex;
+        @include flexCenter;
         flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__text {
         max-width: 657px;
@@ -252,11 +324,14 @@ body {
     &__button-order {
         @include button($colorWhite, $colorMain);
         margin-right: 32px;
-        padding: 23px 50px;
         text-transform: uppercase;
         transition: .3s, ease;
+        @include _425 {
+            @include buttonMob;
+        }
         &:hover {
             background-color: $colorHoverButton;
+            box-shadow: $shadowButt;
             transition: .3s, ease-in;
         }
         &:active {
@@ -266,13 +341,16 @@ body {
     &__button-about {
         @include button($colorMain, transparent);
         border: 3px solid $colorMain;
-        padding: 23px 87px;
         text-transform: uppercase;
         transition: .3s, ease;
+        @include _425 {
+            @include buttonMob;
+        }
         &:hover {
             background-color: $colorHoverButton;
             color: $colorWhite;
             border-color: $colorHoverButton;
+            box-shadow: $shadowButt;
             transition: .3s, ease-in;
         }
         &:active {
@@ -712,7 +790,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $shadow;
     }
     &__blocks-img {
         align-self: center;

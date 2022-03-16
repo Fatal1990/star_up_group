@@ -6,9 +6,177 @@
 }
 
 @mixin button($color, $bgColor) {
+    width: 276px;
+    height: 69px;
     font-size: 18px;
     font-weight: 500;
     border-radius: 8px;
     color: $color;
     background-color: $bgColor;
+}
+
+@mixin buttonMob {
+    width: 146px;
+    height: 41px;
+    font-size: 10px;
+    border-radius: 4px;
+}
+
+@mixin sizeList {
+    width: 100%;
+    max-width: 1200px;
+}
+  
+@mixin sizePage {
+    max-width: 1364px;
+    width: 100%;
+    position: relative;
+}
+  
+@mixin marCenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+@mixin flexCenterSb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+@mixin flexCenterColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin flexStartCenter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+  
+@mixin sizeItem {
+    max-width: 276px;
+    width: 100%;
+    height: 276px;
+}
+
+@mixin sizeItemMob {
+    max-width: 146px;
+    width: 100%;
+    height: 146px;
+}
+  
+@mixin developmentArrowR {
+    content: "";
+    background-color: $colorDark;
+    position: absolute;
+    left: -3px;
+    bottom: -2px;
+    border-radius: 1px;
+    width: 2px;
+    height: 11px;
+}
+  
+@mixin sizeImgItem {
+    align-self: center;
+    margin-bottom: 48px;
+    width: 64px;
+    height: 64px;
+}
+
+@mixin sizeImgItemMob {
+    align-self: center;
+    margin-bottom: 24px;
+    width: 48px;
+    height: 48px;
+}
+
+@mixin sizeImgMob {
+    height: 208px;
+    width: 208px;
+}
+  
+@mixin grid {
+  grid-column-start: 2;
+  align-self: center;
+  justify-self: center;
+  background-color: $colorDark;
+  border-radius: 1px;
+  width: 2px;
+  height: 88px;
+  position: relative;
+}
+  
+@mixin circlePos {
+  position: absolute;
+  right: -125px;
+  bottom: 169px;
+}
+  
+@mixin developmentTr {
+    background-repeat: no-repeat;
+    height: 134px;
+    width: 134px;
+    position: relative;
+}
+
+@mixin sectionMob {
+  background: none;
+  height: auto;
+  margin-bottom: 48px;
+}
+  
+@mixin paddStart {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@mixin _375 {
+  @media (max-width: 375px) {
+      @content;
+  }
+}
+
+@mixin _425 {
+    @media (max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin _583 {
+  @media (max-width: 583px) {
+      @content;
+  }
+}
+
+@mixin _680 {
+    @media (max-width: 680px) {
+        @content;
+    }
+}
+
+@mixin _960 {
+    @media (max-width: 960px) {
+        @content;
+    }
+}
+
+@mixin _1135 {
+    @media (max-width: 1135px) {
+        @content;
+    }    
+}
+
+@mixin _1472 {
+    @media (max-width: 1472px) {
+        @content;
+    }
 }
