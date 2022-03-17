@@ -7,22 +7,55 @@ body {
     background-color: $colorWhite;
     box-shadow: $shadow;
     &__wrp {
-    padding: 3px 16px;
-    @include flexCenterSb;
-    @include text(18px, 500, $colorDark);
-    @include _1472 {
-        justify-content: space-around;
+        padding: 3px 16px;
+        @include flexCenterSb;
+        @include text(18px, 500, $colorDark);
+        @include _1472 {
+            justify-content: space-around;
+        }
+        @include _1135 {
+            font-size: 14px;
+        }
+        @include _800 {
+            font-size: 12px;
+        }
     }
+    &__logo-img {
+        @include _800 {
+            width: 48px;
+            height: 48px;
+        }
     }
     &__nav-wrp {
         max-width: 900px;
         width: 100%;
         @include flexCenterSb;
+        @include _1146 {
+            max-width: 800px;
+        }
+        @include _1024 {
+            max-width: 700px;
+        }
+        @include _960 {
+            max-width: 626px;
+        }
+        @include _800 {
+            max-width: 540px;
+        }
     }
     &__lang-wrp {
         max-width: 176px;
         width: 100%;
         @include flexCenterSb;
+        @include _1204 {
+            max-width: 134px;
+        }
+        @include _1024 {
+            max-width: 116px;
+        }
+        @include _800 {
+            max-width: 86px;
+        }
     }
 }
 .nav-item:hover {
@@ -54,6 +87,19 @@ body {
         @include _1472 {
             @include paddStart;
         }
+        @include _1146 {
+            height: 660px;
+        }
+        @include _1024 {
+            height: 560px;
+            margin-bottom: 62px;
+        }
+        @include _800 {
+            height: 460px;
+        }
+        @include _680 {
+            height: 335px;
+        }
         @include _425 {
             height: auto;
             display: inline-block;
@@ -71,6 +117,15 @@ body {
         line-height: 49px;
         text-transform: uppercase;
         margin-bottom: 56px;
+        @include _800 {
+            font-size: 28px;
+            line-height: 39px;
+        }
+        @include _680 {
+            font-size: 19px;
+            line-height: 29px;
+            margin-bottom: 36px;
+        }
         @include _425 {
             font-size: 18px;
             line-height: 23px;
@@ -79,13 +134,21 @@ body {
     }
     &__description {
         @include text(24px, 400, $colorWhite);
-        @include _425 {
+        @include _800 {
+            font-size: 20px;
+        }
+        @include _680 {
             font-size: 14px;
+        }
+        @include _425 {
             text-align: center;
         }
     }
     &__img-wrp {
         padding-top: 65px;
+        @include _800 {
+            padding-top: 0;
+        }
     }
 }
 
@@ -94,6 +157,11 @@ body {
     background-image: url(../img/Polygon_13.png);
     background-repeat: no-repeat;
     background-position: right 0% top 42%;
+    @include _1024 {
+        height: auto;
+        background: none;
+        margin-bottom: 62px;
+    }
     @include _425 {
         @include sectionMob;
     }
@@ -133,6 +201,9 @@ body {
     &__description {
         @include text(24px, 400, $colorBlack);
         margin-bottom: 72px;
+        @include _1024 {
+            margin-bottom: 52px;
+        }
         @include _425 {
             font-size: 14px;
             text-align: center;
@@ -185,6 +256,9 @@ body {
 }
 
 .main-offer {
+    @include _1024 {
+        margin-bottom: 62px;
+    }
     @include _425 {
         margin-bottom: 32px;
     }
@@ -208,6 +282,9 @@ body {
         @include text(24px, 400, $colorBlack);
         text-align: center;
         margin-bottom: 54px;
+        @include _1024 {
+            margin-bottom: 24px;
+        }
         @include _425 {
             font-size: 14px;
             margin-bottom: 20px;
@@ -299,6 +376,11 @@ body {
     background-image: url(../img/Polygon_14.png);
     background-repeat: no-repeat;
     background-position: left 0% bottom 42%;
+    @include _1024 {
+        height: auto;
+        background: none;
+        margin-bottom: 62px;
+    }
     @include _425 {
         @include sectionMob;
     }
@@ -366,10 +448,9 @@ body {
     background-position: right 0% top 73%;
     margin-bottom: 76px;
     &__wrp {
-        max-width: 1364px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__title {
         @include text(32px, 600, $colorDark);
@@ -391,10 +472,7 @@ body {
     &__development-triangle {
         background-image: url(../img/lightBlue_triangle.svg);
         background-repeat: no-repeat;
-        height: 134px;
-        width: 134px;
-        justify-self: center;
-        position: relative;
+        @include sizeTriangle;
         &::after {
             content: '<div>';
             position: absolute;
@@ -420,25 +498,11 @@ body {
         height: 88px;
         position: relative;
         &::before {
-            content: '';
-            background-color: $colorDark;
-            position: absolute;
-            left: -3px;
-            bottom: -2px;
-            border-radius: 1px;
-            width: 2px;
-            height: 11px;
+            @include developmentArrowLeft;
             transform: rotate(137deg);
         }
         &::after {
-            content: '';
-            background-color: $colorDark;
-            position: absolute;
-            right: -3px;
-            bottom: -2px;
-            border-radius: 1px;
-            width: 2px;
-            height: 11px;
+            @include developmentArrowRight;
             transform: rotate(43deg);
         }      
     }
@@ -452,11 +516,8 @@ body {
     &__content-triangle{
         background-image: url(../img/green_triangle.svg);
         background-repeat: no-repeat;
-        height: 134px;
-        width: 134px;
-        justify-self: right;
         grid-column-start: 2;
-        position: relative;
+        @include sizeTriangle;
         &::before {
             content: 'Aa';
             @include text(36px, 400, $colorWhite);
@@ -480,33 +541,14 @@ body {
     &__content-arrow {
         grid-row-start: 4;
         grid-column-start: 2;
-        align-self: center;
-        justify-self: center; 
-        background-color: $colorDark;
-        border-radius: 1px;
-        width: 2px;
-        height: 88px;
-        position: relative;
+        @include developmentArrow;
         &::before {
-            content: '';
-            background-color: $colorDark;
-            position: absolute;
-            left: -3px;
-            bottom: -2px;
-            border-radius: 1px;
-            width: 2px;
-            height: 11px;
+            @include developmentArrowLeft;
             transform: rotate(137deg);
         }
         &::after {
             content: '';
-            background-color: $colorDark;
-            position: absolute;
-            right: -3px;
-            bottom: -2px;
-            border-radius: 1px;
-            width: 2px;
-            height: 11px;
+            @include developmentArrowRight;
             transform: rotate(43deg);
         }
     }
@@ -519,11 +561,8 @@ body {
     &__promotion-triangle {
         background-image: url(../img/blue_triangle.svg);
         background-repeat: no-repeat;
-        height: 134px;
-        width: 134px;
-        justify-self: center;
         grid-row-start: 5;
-        position: relative;
+        @include sizeTriangle;
         &::after {
             content: url(../icons/TrandPromotion_icon.svg);
             position: absolute;
@@ -544,22 +583,29 @@ body {
     background-repeat: no-repeat;
     background-position: left 0% top -79%;
     margin-bottom: 224px;
+    @include _1135 {
+        background: none;
+    }
     &__wrp-bg {
         background-image: url(../img/Polygon_17.png);
         background-repeat: no-repeat;
-        background-position: right 0% top 155%;    
+        background-position: right 0% top 155%;
+        @include _1135 {
+            background: none;
+        }
     }
     &__wrp {
-        max-width: 1364px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 16px;
+       @include _1472 {
+           @include paddStart;
+       }
     }
     &__workwith-wrp {
-        width: 100%;
-        max-width: 1200px;
+        @include sizeList;
         margin: 0 auto;
         margin-bottom: 92px;
+        @include _1024 {
+            margin-bottom: 62px;
+        }
     }
     &__workwith-title{
         @include text(24px, 400, $colorBlack);
@@ -567,29 +613,43 @@ body {
         margin-bottom: 54px;
     }
     &__workwith-list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexCenterSb
         flex-wrap: wrap;
+        @include _1135 {
+            height: 584px;
+            justify-content: space-evenly;
+        }
+        @include _583 {
+            height: 1134px;
+            margin-bottom: 20px;
+        }
+        @include _425 {
+            height: auto;
+            margin-bottom: 0;
+        }
+        @include _375 {
+            justify-content: space-between;
+        }
     }
     &__workwith-item {
-        max-width: 276px;
-        width: 100%;
-        height: 276px;
+        @include sizeItem;
         padding: 48px 0 0;
         background: $colorWhite;
         border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
         justify-content: flex-start;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $shadow;
+        @include _425 {
+            @include sizeItemMob;
+            padding: 24px 0 0;
+            margin-bottom: 20px;
+        }
     }
     &__workwith-item-img {
-        align-self: center;
-        margin-bottom: 48px;
-        width: 64px;
-        height: 64px;
+        @include sizeImgItem;
+        @include _425 {
+            @include sizeImgItemMob;
+        }
     }
     &__workwith-item-text {
         max-width: 205px;
@@ -597,11 +657,13 @@ body {
         @include text(18px, 500, $colorBlack);
         text-transform: uppercase;
         text-align: center;
+        @include _425 {
+            font-size: 13px;
+            max-width: 122px;
+        }
     }
     &__advantage-wrp {
-        max-width: 994px;
-        width: 100%;
-        margin: 0 auto;
+        @include flexCenterColumn;
     }
     &__advantage-title {
         @include text(32px, 600, $colorDark);
@@ -610,7 +672,6 @@ body {
     }
     &__advantage-list {
         display: flex;
-        height: 1380px;
     }
     &__advantage-list-left {
         width: 50%;
@@ -622,21 +683,17 @@ body {
     &__advantage-list-item-wrp {
         width: 481px;
         height: 481px;
-        display: flex;
-        flex-direction: column;
+        @include flexCenterColumn;
         justify-content: center;
-        align-items: center;
         border-radius: 50%;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: $shadow;
         &.first-circle {
             background: linear-gradient(215.97deg, #EF5DA8 11.42%, #5D5FEF 87.83%);
             margin-bottom: 148px;
             position: relative;
             &::after {
                 content: url(../icons/ArrowRight_icon.svg);
-                position: absolute;
-                right: -125px;
-                bottom: 169px;
+                @include circlePos;
             }
         }
         &.second-circle {
@@ -644,9 +701,7 @@ body {
             position: relative;
             &::after {
                 content: url(../icons/ArrowRight_icon.svg);
-                position: absolute;
-                right: -125px;
-                bottom: 169px;
+                @include circlePos;
             }
         }
         &.third-circle {
@@ -656,8 +711,8 @@ body {
             &::before {
                 content: url(../icons/ArrowLeft_icon.svg);
                 position: absolute;
-                left: -125px;
-                bottom: 100px;
+                left: -115px;
+                bottom: 90px;
             }
         }
         &.fourth-circle {
@@ -759,58 +814,55 @@ body {
     padding-bottom: 86px;
     &__wrp {
         height: 1168px;
-        padding: 0 16px;
-        display: flex;
-        flex-direction: column;
+        @include flexCenterColumn;
         justify-content: flex-end;
-        align-items: center;
         position: relative;
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__blocks-wrp {
         display: flex;
         justify-content: center;
     }
     &__blocks-list {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include sizeList;
+        @include flexCenterSb;
         position: absolute;
         top: -106px;
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__blocks-item {
-        max-width: 276px;
-        width: 100%;
-        height: 276px;
+        @include sizeItem;
         padding: 48px 0 0;
         background: $colorWhite;
         border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
         justify-content: flex-start;
         box-shadow: $shadow;
+        @include _1024 {
+            max-width: 230px;
+            height: 230px;
+        }
     }
     &__blocks-img {
-        align-self: center;
-        margin-bottom: 48px;
-        width: 64px;
-        height: 64px;
+        @include sizeImgItem;
     }
     &__blocks-text {
         max-width: 205px;
         width: 100%;
         @include text(18px, 500, $colorBlack);
-        line-height: 23px;
         text-transform: uppercase;
         text-align: center;
+        @include _1024 {
+            font-size: 16px;
+        }
     }
     &__body-wrp{
         margin-bottom: 124px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
     }
     &__body-title {
         max-width: 755px;
