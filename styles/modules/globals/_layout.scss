@@ -447,6 +447,9 @@ body {
     background-repeat: no-repeat;
     background-position: right 0% top 73%;
     margin-bottom: 76px;
+    @include _1024 {
+        background: none;
+    }
     &__wrp {
         @include _1472 {
             @include paddStart;
@@ -601,7 +604,8 @@ body {
     }
     &__workwith-wrp {
         @include sizeList;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
         margin-bottom: 92px;
         @include _1024 {
             margin-bottom: 62px;
@@ -672,6 +676,9 @@ body {
     }
     &__advantage-list {
         display: flex;
+        @include _960 {
+            display: block;
+        }
     }
     &__advantage-list-left {
         width: 50%;
@@ -679,6 +686,22 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        @include _960 {
+            width: auto;
+            display: block;
+        }
+    }
+    &__advantage-list-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 269px;
+        @include _960 {
+            width: auto;
+            display: block;
+            padding-top: 0;
+        }
     }
     &__advantage-list-item-wrp {
         width: 481px;
@@ -694,6 +717,13 @@ body {
             &::after {
                 content: url(../icons/ArrowRight_icon.svg);
                 @include circlePos;
+                @include _960 {
+                    right: -15px;
+                    bottom: -75px;                    transform: rotate(45deg);
+                }
+            }
+            @include _960 {
+                margin-bottom: 48px;
             }
         }
         &.second-circle {
@@ -702,6 +732,25 @@ body {
             &::after {
                 content: url(../icons/ArrowRight_icon.svg);
                 @include circlePos;
+            }
+            @include _960 {
+                display: none;
+            }
+        }
+        &.second-circle-mob {
+            background: linear-gradient(218.42deg, #FFB07D 16.12%, #FF7087 86.01%);
+            position: relative;
+            display: none;
+            &::after {
+                content: url(../icons/ArrowRight_icon.svg);
+                position: absolute;
+                right: -15px;
+                bottom: -75px;
+                transform: rotate(45deg);
+            }
+            @include _960 {
+                display: flex;
+                margin-bottom: 48px;
             }
         }
         &.third-circle {
@@ -713,18 +762,32 @@ body {
                 position: absolute;
                 left: -115px;
                 bottom: 90px;
+                @include _960 {
+                    left: -15px;
+                    bottom: -75px;
+                    transform: rotate(315deg);
+                }
+            }
+            @include _960 {
+                margin-bottom: 48px;
             }
         }
         &.fourth-circle {
             background: linear-gradient(212.55deg, #E78DD2 17.05%, #3B2D60 85.94%);
         }
+        @include _960 {
+            width: 401px;
+            height: 401px;
+        }
+        @include _425 {
+            width: 312px;
+            height: 312px;
+        }
     }
     &__advantage-list-item {
         width: 100%;
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     &__advantage-list-img {
         margin-bottom: 24px;
@@ -740,26 +803,19 @@ body {
         text-align: center;
         max-width: 350px;
     }
-    &__advantage-list-right {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        padding-top: 269px;
-    }
 }
 
 .main-branding {
     background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
     &__wrp {
         height: 600px;
-        margin: 0 auto;
         padding: 0 16px;
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         position: relative;
+        @include _425 {
+            height: 300px;
+        }
     }
     &__brand-circle-wrp {
         display: flex;
@@ -771,10 +827,8 @@ body {
         height: 265px;
         border-radius: 50%;
         background-color: $colorDark;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        box-shadow: $shadow;
+        @include flexCenter;
         position: absolute;
         top: -125px;
     }
@@ -785,10 +839,8 @@ body {
     &__brand-text-wrp {
         max-width: 610px;
         width: 100%;
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     &__brand-text-title {
         @include text(32px, 600, $colorWhite);
@@ -907,9 +959,7 @@ body {
     &__request-wrp {
         max-width: 790px;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
     }
     &__request-title {
         @include text(28px, 500, $colorWhite);
@@ -940,12 +990,14 @@ body {
     }
     &__title-wrp {
         height: 225px;
-        padding: 0 16px;
         margin-bottom: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
         background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
+        @include _1472 {
+            @include paddStart;
+        }
     }
     &__title {
         max-width: 790px;
@@ -958,11 +1010,10 @@ body {
         max-width: 604px;
         width: 100%;
         padding-top: 36px;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
         background-color: $colorWhite;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flexCenterColumn;
     }
     &__form-title {
         @include text(24px, 400, $colorDark);
@@ -971,17 +1022,13 @@ body {
         margin-bottom: 52px;
     }
     &__form-list {
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 36px;
     }
     &__form-list-wrp {
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 52px;
     }
     &__form-item {
@@ -998,9 +1045,7 @@ body {
         }
     }
     &__form-list-text-wrp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         margin-bottom: 52px;
     }
     &__form-list-text-img {
@@ -1033,17 +1078,13 @@ body {
     margin-bottom: 32px;
     &__wrp {
         padding: 60px 16px 0;
-        display: flex;
+        @include flexCenter;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
     &__nav-wrp {
         max-width: 994px;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flexCenterSb;
         margin-bottom: 91px;
     }
     &__nav-item {
@@ -1065,9 +1106,7 @@ body {
     &__agreement-wrp {
         max-width: 584px;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flexCenterSb;
         margin-bottom: 48px;
     }
     &__agreement-item {
