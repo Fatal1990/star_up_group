@@ -694,7 +694,7 @@ body {
         margin-bottom: 54px;
     }
     &__workwith-list {
-        @include flexCenterSb
+        @include flexCenterSb;
         flex-wrap: wrap;
         @include _1135 {
             height: 584px;
