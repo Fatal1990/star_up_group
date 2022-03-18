@@ -16,12 +16,12 @@ body {
         @include _1135 {
             font-size: 14px;
         }
-        @include _800 {
+        @include _820 {
             font-size: 12px;
         }
     }
     &__logo-img {
-        @include _800 {
+        @include _820 {
             width: 48px;
             height: 48px;
         }
@@ -39,7 +39,7 @@ body {
         @include _960 {
             max-width: 626px;
         }
-        @include _800 {
+        @include _820 {
             max-width: 540px;
         }
     }
@@ -53,7 +53,7 @@ body {
         @include _1024 {
             max-width: 116px;
         }
-        @include _800 {
+        @include _820 {
             max-width: 86px;
         }
     }
@@ -79,6 +79,10 @@ body {
     background-position-x: left;
     background-position-y: top;
     background-size: contain;
+    @include _425 {
+        background-image: url(../img/idea_bg_mob.png);
+        margin-bottom: 32px;
+    }
     &__wrp {
         height: 760px;
         display: flex;
@@ -92,24 +96,27 @@ body {
         }
         @include _1024 {
             height: 560px;
-            margin-bottom: 62px;
         }
-        @include _800 {
+        @include _820 {
             height: 460px;
         }
         @include _680 {
-            height: 335px;
+            height: 290px;
         }
         @include _425 {
+            padding-top: 62px;
             height: auto;
-            display: inline-block;
+            display: block;
+        }
+        @include _320 {
+            padding-top: 31px;
         }
     }
     &__text {
         max-width: 640px;
         width: 100%;
         @include _425 {
-            text-align: center;
+            @include flexCenterColumn;
         }
     }
     &__title {
@@ -117,7 +124,7 @@ body {
         line-height: 49px;
         text-transform: uppercase;
         margin-bottom: 56px;
-        @include _800 {
+        @include _820 {
             font-size: 28px;
             line-height: 39px;
         }
@@ -127,14 +134,33 @@ body {
             margin-bottom: 36px;
         }
         @include _425 {
+            max-width: 312px;
+            width: 100%;
             font-size: 18px;
             line-height: 23px;
-            margin-bottom: 0;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        @include _375 {
+            max-width: 260px;
+        }
+        @include _320 {
+            max-width: 235px;
+            margin-bottom: 12px;
+        }
+    }
+    &__img-mob {
+        max-width: 208px;
+        display: none;
+        @include _425 {
+            align-self: flex-end;
+            display: block;
+            margin-bottom: 24px; 
         }
     }
     &__description {
         @include text(24px, 400, $colorWhite);
-        @include _800 {
+        @include _820 {
             font-size: 20px;
         }
         @include _680 {
@@ -142,12 +168,17 @@ body {
         }
         @include _425 {
             text-align: center;
+            color: $colorDark;
+            text-align: center;
         }
     }
     &__img-wrp {
         padding-top: 65px;
-        @include _800 {
+        @include _820 {
             padding-top: 0;
+        }
+        @include _425 {
+            display: none;
         }
     }
 }
@@ -176,10 +207,17 @@ body {
     }
     &__img-wrp {
         margin-right: 32px;
+        @include _960 {
+            margin-right: 12px;
+        }
         @include _425 {
-            @include sizeImgMob;
             margin-right: 0;
             margin-bottom: 32px;
+        }
+    }
+    &__img {
+        @include _425 {
+            @include sizeImgMob;
         }
     }
     &__text {
@@ -224,6 +262,9 @@ body {
         @include _425 {
             @include buttonMob;
         }
+        @include _375 {
+            margin-right: 20px;
+        }
         &:hover {
             background-color: $colorHoverButton;
             box-shadow: $shadowButt;
@@ -260,7 +301,7 @@ body {
         margin-bottom: 62px;
     }
     @include _425 {
-        margin-bottom: 32px;
+        margin-bottom: 40px;
     }
     &__wrp {
         @include flexCenterColumn;
@@ -313,7 +354,7 @@ body {
     }
     &__item {
         @include sizeItem;
-        padding: 48px 0 0;
+        padding-top: 48px;
         background: $colorWhite;
         border-radius: 8px;
         @include flexCenterColumn;
@@ -321,7 +362,7 @@ body {
         box-shadow: $shadow;
         @include _425 {
             @include sizeItemMob;
-            padding: 24px 0 0;
+            padding-top: 30px;
             margin-bottom: 20px;
         }
     }
@@ -340,6 +381,9 @@ body {
         @include _425 {
             font-size: 13px;
             max-width: 122px;
+        }
+        @include _375 {
+            font-size: 10px;
         }
     }
     &__description{
@@ -391,6 +435,19 @@ body {
         @include _1472 {
             @include paddStart;
         }
+        @include _425 {
+            flex-direction: column;
+        }
+    }
+    &__img-wrp {
+        @include _425 {
+            margin-bottom: 32px;
+        }
+    }
+    &__img {
+        @include _425 {
+            @include sizeImgMob;
+        }
     }
     &__text {
         max-width: 657px;
@@ -399,6 +456,13 @@ body {
     &__title {
         @include text(24px, 400, $colorBlack);
         margin-bottom: 38px;
+        @include _425 {
+            font-size: 20px;
+        }
+        @include _375 {
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
     }
     &__button-wrp {
         display: flex;
@@ -410,6 +474,9 @@ body {
         transition: .3s, ease;
         @include _425 {
             @include buttonMob;
+        }
+        @include _375 {
+            margin-right: 20px;
         }
         &:hover {
             background-color: $colorHoverButton;
@@ -457,9 +524,16 @@ body {
     }
     &__title {
         @include text(32px, 600, $colorDark);
-        line-height: 42px;
         text-align: center;
         margin-bottom: 59px;
+        @include _425 {
+            font-size: 24px;
+            margin-bottom: 49px;
+        }
+        @include _375 {
+            font-size: 20px;
+            margin-bottom: 32px;
+        }
     }
     &__wrp-grid {
         display: grid;
@@ -588,6 +662,9 @@ body {
     margin-bottom: 224px;
     @include _1135 {
         background: none;
+    }
+    @include _425 {
+        margin-bottom: 100px;
     }
     &__wrp-bg {
         background-image: url(../img/Polygon_17.png);
@@ -719,11 +796,19 @@ body {
                 @include circlePos;
                 @include _960 {
                     right: -15px;
-                    bottom: -75px;                    transform: rotate(45deg);
+                    bottom: -75px;
+                    transform: rotate(45deg);
+                }
+                @include _425 {
+                    right: -35px;
+                    bottom: -70px;
                 }
             }
             @include _960 {
                 margin-bottom: 48px;
+            }
+            @include _425 {
+                margin-bottom: 24px;
             }
         }
         &.second-circle {
@@ -747,10 +832,17 @@ body {
                 right: -15px;
                 bottom: -75px;
                 transform: rotate(45deg);
+                @include _425 {
+                    right: -35px;
+                    bottom: -70px;
+                }
             }
             @include _960 {
                 display: flex;
                 margin-bottom: 48px;
+            }
+            @include _425 {
+                margin-bottom: 24px;
             }
         }
         &.third-circle {
@@ -767,9 +859,16 @@ body {
                     bottom: -75px;
                     transform: rotate(315deg);
                 }
+                @include _425 {
+                    left: -35px;
+                    bottom: -70px;
+                }
             }
             @include _960 {
                 margin-bottom: 48px;
+            }
+            @include _425 {
+                margin-bottom: 24px;
             }
         }
         &.fourth-circle {
@@ -791,17 +890,35 @@ body {
     }
     &__advantage-list-img {
         margin-bottom: 24px;
+        @include _425 {
+            max-width: 104px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
     }
     &__advantage-list-title {
         @include text (20px, 500, $colorWhite);
         text-align: center;
         margin-bottom: 24px;
+        @include _425 {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        @include _375 {
+            font-size: 13px;
+        }
     }
     &__advantage-list-text {
+        max-width: 350px;
+        width: 100%;
         @include text(16px, 400, $colorWhite);
         line-height: 20px;
         text-align: center;
-        max-width: 350px;
+        @include _425 {
+            max-width: 230px;
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
 }
 
@@ -809,10 +926,12 @@ body {
     background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
     &__wrp {
         height: 600px;
-        padding: 0 16px;
         @include flexCenter;
         flex-direction: column;
         position: relative;
+        @include _1472 {
+            @include paddStart;
+        }
         @include _425 {
             height: 300px;
         }
@@ -822,8 +941,7 @@ body {
         justify-content: center;
     }
     &__brand-circle {
-        max-width: 265px;
-        width: 100%;
+        width: 265px;
         height: 265px;
         border-radius: 50%;
         background-color: $colorDark;
@@ -831,10 +949,18 @@ body {
         @include flexCenter;
         position: absolute;
         top: -125px;
+        @include _425 {
+            width: 140px;
+            height: 140px;
+            top: -66px;
+        }
     }
     &__brand-title {
         @include text(36px, 500, $colorWhite);
         text-transform: uppercase;
+        @include _425 {
+            font-size: 18px;
+        }
     }
     &__brand-text-wrp {
         max-width: 610px;
@@ -847,17 +973,36 @@ body {
         line-height: 42px;
         margin-bottom: 16px;
         text-align: center;
+        @include _425 {
+            font-size: 24px;
+            line-height: 26px;
+            margin-bottom: 12px;
+        }
+        @include _375 {
+            font-size: 20px;
+        }
     }
     &__brand-text-line {
         background-color: $colorWhite;
         height: 2px;
         width: 100%;
         margin-bottom: 16px;
+        @include _425 {
+            height: 1px;
+            margin-bottom: 12px;
+        }
     }
     &__brand-text-main {
         @include text(24px, 600, $colorWhite);
         line-height: 31px;
         text-align: center;
+        @include _425 {
+            font-size: 16px;
+            line-height: 18px;
+        }
+        @include _375 {
+            font-size: 14px;
+        }
     }
 }
 
@@ -872,6 +1017,9 @@ body {
         @include _1472 {
             @include paddStart;
         }
+        @include _960 {
+            height: 1020px;
+        }
     }
     &__blocks-wrp {
         display: flex;
@@ -885,10 +1033,13 @@ body {
         @include _1472 {
             @include paddStart;
         }
+        @include _960 {
+            justify-content: space-evenly;
+        }
     }
     &__blocks-item {
         @include sizeItem;
-        padding: 48px 0 0;
+        padding-top: 48px;
         background: $colorWhite;
         border-radius: 8px;
         @include flexCenterColumn;
@@ -898,9 +1049,17 @@ body {
             max-width: 230px;
             height: 230px;
         }
+        @include _960 {
+            max-width: 183px;
+            height: 183px;
+            padding-top: 32px;
+        }
     }
     &__blocks-img {
         @include sizeImgItem;
+        @include _960 {
+            margin-bottom: 32px;
+        }
     }
     &__blocks-text {
         max-width: 205px;
@@ -911,10 +1070,17 @@ body {
         @include _1024 {
             font-size: 16px;
         }
+        @include _960 {
+            max-width: 176px;
+            font-size: 14px;
+        }
     }
     &__body-wrp{
         margin-bottom: 124px;
         @include flexCenterColumn;
+        @include _960 {
+            margin-bottom: 94px;
+        }
     }
     &__body-title {
         max-width: 755px;
@@ -923,6 +1089,9 @@ body {
         line-height: 36px;
         text-align: center;
         margin-bottom: 101px;
+        @include _960 {
+            margin-bottom: 80px;
+        }
     }
     &__body-list {
         max-width: 1206px;
@@ -942,7 +1111,6 @@ body {
         max-width: 173px;
         width: 100%;
         @include text(24px, 500, $colorWhite);
-        line-height: 31px;
         text-align: right;
         margin-right: 32px;
     }
@@ -953,8 +1121,10 @@ body {
         max-width: 789px;
         width: 100%;
         @include text(24px, 500, $colorWhite);
-        line-height: 31px;
         text-align: left;
+        @include _960 {
+            max-width: 500px;
+        }
     }
     &__request-wrp {
         max-width: 790px;
@@ -966,14 +1136,22 @@ body {
         line-height: 36px;
         text-align: center;
         margin-bottom: 48px;
+        @include _425 {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 36px;
+        }
+        @include _375 {
+            font-size: 20px;
+            line-height: 26px;
+        }
     }
     &__request-button{
-        max-width: 378px;
-        width: 100%;
-        height: 69px;
         @include button($colorDark, $colorWhite);
+        max-width: 378px;
         text-transform: uppercase;
         transition: 0.3 ease;
+        @include buttonMobMar;
         &:hover {
             background: linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
             transition: 0.3 ease-in;
@@ -987,16 +1165,24 @@ body {
 .main-form {    
     &__wrp {
         padding-top: 36px;
+        @include _425 {
+            padding-top: 0;
+        }
     }
     &__title-wrp {
         height: 225px;
         margin-bottom: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         background: linear-gradient(266.62deg, #E55DAD 0%, #745EE3 100%);
         @include _1472 {
             @include paddStart;
+        }
+        @include _425 {
+            height: 200px;
+            margin-bottom: 36px;
+        }
+        @include _375 {
+            height: 150px;
         }
     }
     &__title {
@@ -1005,6 +1191,14 @@ body {
         @include text (36px, 600, $colorWhite);
         line-height: 47px;
         text-align: center;
+        @include _425 {
+            font-size: 26px;
+            line-height: 32px;
+        }
+        @include _375 {
+            font-size: 20px;
+            line-height: 26px;
+        }
     }
     &__form-wrp {
         max-width: 604px;
@@ -1017,7 +1211,6 @@ body {
     }
     &__form-title {
         @include text(24px, 400, $colorDark);
-        line-height: 31px;
         letter-spacing: 0.01em;
         margin-bottom: 52px;
     }
@@ -1049,11 +1242,10 @@ body {
         margin-bottom: 52px;
     }
     &__form-list-text-img {
-    margin-right: 16px;
+        margin-right: 16px;
     }
     &__form-list-text {
         @include text(14px, 400, $colorBlack);
-        line-height: 18px;
         letter-spacing: 0.01em;
     }
     &__form-button {
@@ -1063,6 +1255,7 @@ body {
         @include button($colorWhite, $colorMain);
         text-transform: uppercase;
         transition: .3s, ease;
+        @include buttonMobMar;
         &:hover {
             background-color: $colorHoverButton;
             transition: .3s, ease-in;
@@ -1086,10 +1279,12 @@ body {
         width: 100%;
         @include flexCenterSb;
         margin-bottom: 91px;
+        @include _960 {
+            max-width: 860px;
+        }
     }
     &__nav-item {
         @include text(18px, 500, $colorDark);
-        line-height: 23px;
         text-align: center;
         &:hover {
             color: $colorMain;
@@ -1111,7 +1306,6 @@ body {
     }
     &__agreement-item {
         @include text(18px, 500, $colorDark);
-        line-height: 23px;
         text-align: center;
         &:hover {
             color: $colorMain;
@@ -1126,7 +1320,6 @@ body {
     }
     &__copyright {
         @include text(18px, 500, $colorDark);
-        line-height: 23px;
         text-align: center;
     }
 }
