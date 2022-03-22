@@ -85,12 +85,19 @@
     max-width: 276px;
     width: 100%;
     height: 276px;
+    padding-top: 48px;
+    background: $colorWhite;
+    border-radius: 8px;
+    justify-content: flex-start;
+    box-shadow: $shadow;
 }
 
 @mixin sizeItemMob {
     max-width: 146px;
     width: 100%;
     height: 146px;
+    justify-content: center;
+    padding-top: 0;
 }
   
 @mixin developmentArrowLeft {
@@ -129,14 +136,12 @@
     align-self: center;
     margin-bottom: 48px;
     width: 64px;
-    height: 64px;
 }
 
 @mixin sizeImgItemMob {
     align-self: center;
     margin-bottom: 24px;
     width: 48px;
-    height: 48px;
 }
 
 @mixin sizeImgMob {
@@ -179,8 +184,8 @@
     padding-right: 16px;
 }
 
-@mixin _320 {
-    @media (max-width: 320px) {
+@mixin _323 {
+    @media (max-width: 323px) {
         @content;
     }
 }
@@ -205,6 +210,12 @@
 
 @mixin _680 {
     @media (max-width: 680px) {
+        @content;
+    }
+}
+
+@mixin _768 {
+    @media (max-width: 768px) {
         @content;
     }
 }

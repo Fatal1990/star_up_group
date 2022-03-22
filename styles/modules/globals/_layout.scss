@@ -23,7 +23,15 @@ body {
     &__logo-img {
         @include _820 {
             width: 48px;
-            height: 48px;
+        }
+        @include _680 {
+            display: none;
+        }
+    }
+    &__logo-img-mob {
+        display: none;
+        @include _680 {
+            display: block;
         }
     }
     &__nav-wrp {
@@ -42,6 +50,9 @@ body {
         @include _820 {
             max-width: 540px;
         }
+        @include _680 {
+            display: none;
+        }
     }
     &__lang-wrp {
         max-width: 176px;
@@ -55,6 +66,9 @@ body {
         }
         @include _820 {
             max-width: 86px;
+        }
+        @include _680 {
+            display: none;
         }
     }
 }
@@ -108,7 +122,7 @@ body {
             height: auto;
             display: block;
         }
-        @include _320 {
+        @include _323 {
             padding-top: 31px;
         }
     }
@@ -144,7 +158,7 @@ body {
         @include _375 {
             max-width: 260px;
         }
-        @include _320 {
+        @include _323 {
             max-width: 235px;
             margin-bottom: 12px;
         }
@@ -346,24 +360,28 @@ body {
         }
         @include _425 {
             height: auto;
-            margin-bottom: 0;
         }
         @include _375 {
-            justify-content: space-between;
+            justify-content: space-evenly;
         }
     }
     &__item {
         @include sizeItem;
-        padding-top: 48px;
-        background: $colorWhite;
-        border-radius: 8px;
         @include flexCenterColumn;
-        justify-content: flex-start;
-        box-shadow: $shadow;
         @include _425 {
             @include sizeItemMob;
-            padding-top: 30px;
             margin-bottom: 20px;
+            &:nth-last-child(-n+2) {
+                margin-bottom: 0;
+            }
+        }
+        @include _323 {
+            &:nth-last-child(2) {
+                margin-bottom: 20px;
+            }
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
         }
     }
     &__item-img {
@@ -687,11 +705,18 @@ body {
         @include _1024 {
             margin-bottom: 62px;
         }
+        @include _425 {
+            margin-bottom: 48px;
+        }
     }
     &__workwith-title{
         @include text(24px, 400, $colorBlack);
         text-align: center;
         margin-bottom: 54px;
+        @include _425 {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
     }
     &__workwith-list {
         @include flexCenterSb;
@@ -702,28 +727,28 @@ body {
         }
         @include _583 {
             height: 1134px;
-            margin-bottom: 20px;
         }
         @include _425 {
             height: auto;
-            margin-bottom: 0;
-        }
-        @include _375 {
-            justify-content: space-between;
         }
     }
     &__workwith-item {
         @include sizeItem;
-        padding: 48px 0 0;
-        background: $colorWhite;
-        border-radius: 8px;
         @include flexCenterColumn;
-        justify-content: flex-start;
-        box-shadow: $shadow;
         @include _425 {
             @include sizeItemMob;
-            padding: 24px 0 0;
             margin-bottom: 20px;
+            &:nth-last-child(-n+2) {
+                margin-bottom: 0;
+            }
+        }
+        @include _323 {
+            &:nth-last-child(2) {
+                margin-bottom: 20px;
+            }
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
         }
     }
     &__workwith-item-img {
@@ -741,6 +766,9 @@ body {
         @include _425 {
             font-size: 13px;
             max-width: 122px;
+        }
+        @include _375 {
+            font-size: 10px;
         }
     }
     &__advantage-wrp {
@@ -936,10 +964,6 @@ body {
             height: 300px;
         }
     }
-    &__brand-circle-wrp {
-        display: flex;
-        justify-content: center;
-    }
     &__brand-circle {
         width: 265px;
         height: 265px;
@@ -1020,31 +1044,36 @@ body {
         @include _960 {
             height: 1020px;
         }
-    }
-    &__blocks-wrp {
-        display: flex;
-        justify-content: center;
+        @include _768 {
+            height: auto;
+        }
     }
     &__blocks-list {
         @include sizeList;
         @include flexCenterSb;
         position: absolute;
         top: -106px;
-        @include _1472 {
-            @include paddStart;
-        }
         @include _960 {
             justify-content: space-evenly;
+        }
+        @include _820 {
+            justify-content: space-between;
+        }
+        @include _768 {
+            position: static;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            height: 395px;
+        }
+        @include _425 {
+            height: auto;
+            margin-bottom: 20px;
+            padding-top: 20px;
         }
     }
     &__blocks-item {
         @include sizeItem;
-        padding-top: 48px;
-        background: $colorWhite;
-        border-radius: 8px;
         @include flexCenterColumn;
-        justify-content: flex-start;
-        box-shadow: $shadow;
         @include _1024 {
             max-width: 230px;
             height: 230px;
@@ -1052,13 +1081,31 @@ body {
         @include _960 {
             max-width: 183px;
             height: 183px;
-            padding-top: 32px;
+            padding-top: 30px;
+        }
+        @include _425 {
+            @include sizeItemMob;
+            margin-bottom: 20px;
+            &:nth-last-child(-n+2) {
+                margin-bottom: 0;
+            }
+        }
+        @include _323 {
+            &:nth-last-child(2) {
+                margin-bottom: 20px;
+            }
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
         }
     }
     &__blocks-img {
         @include sizeImgItem;
         @include _960 {
             margin-bottom: 32px;
+        }
+        @include _425 {
+            @include sizeImgItemMob;
         }
     }
     &__blocks-text {
@@ -1074,12 +1121,19 @@ body {
             max-width: 176px;
             font-size: 14px;
         }
+        @include _425 {
+            max-width: 138px;
+            font-size: 10px;
+        }
     }
     &__body-wrp{
         margin-bottom: 124px;
         @include flexCenterColumn;
         @include _960 {
             margin-bottom: 94px;
+        }
+        @include _425 {
+            margin-bottom: 36px;
         }
     }
     &__body-title {
@@ -1092,20 +1146,38 @@ body {
         @include _960 {
             margin-bottom: 80px;
         }
+        @include _425 {
+            max-width: 312px;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: start;
+            margin-bottom: 24px;
+        }
     }
     &__body-list {
         max-width: 1206px;
         width: 100%;
-        &:last-child {
-            border-bottom: 2px solid $colorWhite;
+        border-bottom: 2px solid $colorWhite;
+        @include _425 {
+            border-bottom: 1px solid $colorWhite;
+            border-top: 1px solid $colorWhite;
         }
     }
     &__body-list-item {
-        height: 134px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         border-top: 2px solid $colorWhite;
+        margin-bottom: 36px;
+        padding-top: 36px;
+        @include _425 {
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            border-top: none;
+            padding-top: 24px;
+            margin-bottom: 0;
+        }
     }
     &__body-list-title {
         max-width: 173px;
@@ -1113,9 +1185,23 @@ body {
         @include text(24px, 500, $colorWhite);
         text-align: right;
         margin-right: 32px;
+        @include _768 {
+            font-size: 20px;
+        }
+        @include _583 {
+            text-align: center;
+        }
+        @include _425 {
+            font-size: 14px;
+            margin-right: 0;
+            margin-bottom: 12px;
+        }
     }
     &__body-list-img{
         margin-right: 32px;
+        @include _583 {
+            display: none;
+        }
     }
     &__body-list-text {
         max-width: 789px;
@@ -1124,6 +1210,16 @@ body {
         text-align: left;
         @include _960 {
             max-width: 500px;
+        }
+        @include _768 {
+            font-size: 20px;
+        }
+        @include _425 {
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            max-width: 312px;
+            margin-bottom: 24px;
         }
     }
     &__request-wrp {
@@ -1137,13 +1233,9 @@ body {
         text-align: center;
         margin-bottom: 48px;
         @include _425 {
-            font-size: 24px;
-            line-height: 28px;
-            margin-bottom: 36px;
-        }
-        @include _375 {
             font-size: 20px;
             line-height: 26px;
+            margin-bottom: 36px;
         }
     }
     &__request-button{
@@ -1273,6 +1365,9 @@ body {
         padding: 60px 16px 0;
         @include flexCenter;
         flex-direction: column;
+        @include _680 {
+            padding: 36px 16px 0;
+        }
     }
     &__nav-wrp {
         max-width: 994px;
@@ -1282,10 +1377,24 @@ body {
         @include _960 {
             max-width: 860px;
         }
+        @include _680 {
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
     }
     &__nav-item {
         @include text(18px, 500, $colorDark);
         text-align: center;
+        @include _680 {
+            margin-bottom: 24px;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+        @include _425 {
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
         &:hover {
             color: $colorMain;
             cursor: pointer;
@@ -1294,19 +1403,36 @@ body {
     &__nav-mob-line {
         max-width: 312px;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: $colorDark;
         display: none;
+        @include _680 {
+            display: block;
+            margin-bottom: 24px;
+        }
     }
     &__agreement-wrp {
         max-width: 584px;
         width: 100%;
         @include flexCenterSb;
         margin-bottom: 48px;
+        @include _680 {
+            flex-direction: column;
+            margin-bottom: 36px;
+        }
     }
     &__agreement-item {
         @include text(18px, 500, $colorDark);
         text-align: center;
+        @include _680 {
+            margin-bottom: 18px;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+        @include _425 {
+            font-size: 12px;
+        }
         &:hover {
             color: $colorMain;
             cursor: pointer;
@@ -1317,10 +1443,16 @@ body {
         height: 8px;
         background-color: $colorDark;
         border-radius: 50%;
+        @include _680 {
+            display: none;
+        }
     }
     &__copyright {
         @include text(18px, 500, $colorDark);
         text-align: center;
+        @include _425 {
+            font-size: 12px;
+        }
     }
 }
 
