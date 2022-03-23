@@ -588,19 +588,56 @@ body {
         @include _1024 {
             grid-template-columns: 1fr 0.5fr 1fr;
         }
-        // @include _768 {
-        //     grid-template-columns: 1fr 1fr 1fr;
-        // }
+    }
+    &__development-mob {
+        display: none;
+        @include _425 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__development-triangle-mob {
+        background-image: url(../img/lightBlue_triangle.svg);
+        background-repeat: no-repeat;
+        @include sizeTriangleMob;
+        &::after {
+            content: '<div>';
+            position: absolute;
+            @include text(12px, 700, $colorWhite);
+            letter-spacing: 0.07em;
+            font-family: 'IBM Plex Mono', monospace, sans-serif, Arial;
+            right: 18px;
+            top: 23px;
+        }
+    }
+    &__development-text-mob {
+        @include text(14px, 600, $colorDark);
     }
     &__development-numer {
         @include text(48px, 700, $colorDark);
         justify-self: right;
         margin-right: 48px;
+        @include _680 {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
     &__development-triangle {
         background-image: url(../img/lightBlue_triangle.svg);
         background-repeat: no-repeat;
         @include sizeTriangle;
+        @include _680 {
+            background-size: 100%;
+            height: 90px;
+            width: 90px;
+        }
+        @include _425 {
+            display: none;
+        }
         &::after {
             content: '<div>';
             position: absolute;
@@ -609,12 +646,24 @@ body {
             font-family: 'IBM Plex Mono', monospace, sans-serif, Arial;
             right: 40px;
             top: 45px;
+            @include _680 {
+                font-size: 19px;
+                right: 20px;
+                top: 30px;
+            }
         }
     }
     &__development-text {
         @include text(28px, 600, $colorDark);
         justify-self: left;
         margin-left: 48px;
+        @include _680 {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
     &__development-arrow {
         grid-column-start: 2;
@@ -634,37 +683,76 @@ body {
             transform: rotate(43deg);
         }      
     }
+    &__content-mob {
+        display: none;
+        @include _425 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
     &__content-numer {
         @include text(48px, 700, $colorDark);
         grid-row-start: 3;
         grid-column-start: 3;
         justify-self: left;
         margin-left: 48px;
+        @include _680 {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
     &__content-triangle{
         background-image: url(../img/green_triangle.svg);
         background-repeat: no-repeat;
         grid-column-start: 2;
         @include sizeTriangle;
+        @include _680 {
+            background-size: 100%;
+            height: 90px;
+            width: 90px;
+        }
+        @include _425 {
+            display: none;
+        }
         &::before {
             content: 'Aa';
             @include text(36px, 400, $colorWhite);
             position: absolute;
             right: 23px;
             bottom: 18px;
+            @include _680 {
+                font-size: 24px;
+                right: 11px;
+                bottom: 9px;
+            }
         }
         &::after {
             content: url(../icons/content_icon.svg);
             position: absolute;
             left: 50px;
             top: 43px;
+            @include _680 {
+                left: 30px;
+                top: 25px;
+            }
         }
     }
     &__content-text {
         @include text(28px, 600, $colorDark);
         grid-row-start: 3;
-        justify-self: right;
+        text-align: right;
         margin-right: 48px;
+        @include _680 {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
     &__content-arrow {
         grid-row-start: 4;
@@ -680,22 +768,49 @@ body {
             transform: rotate(43deg);
         }
     }
+    &__promotion-mob {
+        display: none;
+        @include _425 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
     &__promotion-numer {
         @include text(48px, 700, $colorDark);
         grid-row-start: 5;
         justify-self: right;
         margin-right: 48px;
+        @include _680 {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
     &__promotion-triangle {
         background-image: url(../img/blue_triangle.svg);
         background-repeat: no-repeat;
         grid-row-start: 5;
         @include sizeTriangle;
+        @include _680 {
+            background-size: 100%;
+            height: 90px;
+            width: 90px;
+        }
+        @include _425 {
+            display: none;
+        }
         &::after {
             content: url(../icons/TrandPromotion_icon.svg);
             position: absolute;
             top: 36px;
             left: 17px;
+            @include _680 {
+                top: 18px;
+                left: 7px;
+            }
         }
     }
     &__promotion-text {
@@ -703,6 +818,13 @@ body {
         grid-row-start: 5;
         justify-self: left;
         margin-left: 48px;
+        @include _680 {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        @include _425 {
+            display: none;
+        }
     }
 }
 
@@ -726,14 +848,13 @@ body {
         }
     }
     &__wrp {
-       @include _1472 {
-           @include paddStart;
+        @include flexCenterColumn;
+        @include _1472 {
+            @include paddStart;
        }
     }
     &__workwith-wrp {
         @include sizeList;
-        margin-right: auto;
-        margin-left: auto;
         margin-bottom: 92px;
         @include _1024 {
             margin-bottom: 62px;
@@ -938,6 +1059,10 @@ body {
         @include _960 {
             width: 401px;
             height: 401px;
+        }
+        @include _680 {
+            width: 380px;
+            height: 380px;
         }
         @include _425 {
             width: 312px;

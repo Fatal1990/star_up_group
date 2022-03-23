@@ -41,6 +41,14 @@
     position: relative;
 }
 
+@mixin sizeTriangleMob {
+    height: 65px;
+    width: 65px;
+    justify-self: center;
+    position: relative;
+    background-size: 100%;
+}
+
 @mixin sizeList {
     width: 100%;
     max-width: 1200px;
