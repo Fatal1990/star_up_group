@@ -1051,8 +1051,10 @@ body {
                     transform: rotate(45deg);
                 }
                 @include _425 {
-                    right: -35px;
-                    bottom: -70px;
+                    content: url(../icons/ArrowRightMob_icon.svg);
+                    right: 5px;
+                    bottom: -50px;
+                    transform: rotate(0);
                 }
             }
             @include _960 {
@@ -1084,8 +1086,10 @@ body {
                 bottom: -75px;
                 transform: rotate(45deg);
                 @include _425 {
-                    right: -35px;
-                    bottom: -70px;
+                    content: url(../icons/ArrowRightMob_icon.svg);
+                    right: 5px;
+                    bottom: -50px;
+                    transform: rotate(0);
                 }
             }
             @include _960 {
@@ -1111,8 +1115,10 @@ body {
                     transform: rotate(315deg);
                 }
                 @include _425 {
-                    left: -35px;
-                    bottom: -70px;
+                    content: url(../icons/ArrowLeftMob_icon.svg);
+                    left: 5px;
+                    bottom: -50px;
+                    transform: rotate(0);
                 }
             }
             @include _960 {
@@ -1134,8 +1140,8 @@ body {
             height: 380px;
         }
         @include _425 {
-            width: 312px;
-            height: 312px;
+            width: 286px;
+            height: 286px;
         }
     }
     &__advantage-list-item {
@@ -1520,6 +1526,11 @@ body {
             font-size: 20px;
             line-height: 26px;
         }
+    }
+    &__container {
+        width: 100%;
+        @include flexCenter;
+        @include paddStart;
     }
     &__form-wrp {
         max-width: 604px;
