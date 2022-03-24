@@ -503,6 +503,10 @@ body {
     }
     &__button-wrp {
         display: flex;
+        justify-content: flex-start;
+        @include _425 {
+            justify-content: center;
+        }
     }
     &__button-order {
         @include button($colorWhite, $colorMain);
@@ -588,19 +592,23 @@ body {
         @include _1024 {
             grid-template-columns: 1fr 0.5fr 1fr;
         }
+        @include _425 {
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr 1fr;
+            position: relative;
+        }
     }
     &__development-mob {
         display: none;
         @include _425 {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            @include flexCenterColumn;
         }
     }
     &__development-triangle-mob {
         background-image: url(../img/lightBlue_triangle.svg);
         background-repeat: no-repeat;
         @include sizeTriangleMob;
+        align-self: center;
         &::after {
             content: '<div>';
             position: absolute;
@@ -667,20 +675,27 @@ body {
     }
     &__development-arrow {
         grid-column-start: 2;
-        align-self: center;
-        justify-self: center; 
-        background-color: $colorDark;
-        border-radius: 1px;
-        width: 2px;
-        height: 88px;
-        position: relative;
+        @include developmentArrow;
+        @include _425 {
+            position: absolute;
+            width: 1px;
+            transform: rotate(296deg);
+            top: 30px;
+            left: 60px;
+        }
         &::before {
             @include developmentArrowLeft;
-            transform: rotate(137deg);
+            transform: rotate(143deg);
+            @include _425 {
+                width: 1px;
+            }
         }
         &::after {
             @include developmentArrowRight;
-            transform: rotate(43deg);
+            transform: rotate(36deg);
+            @include _425 {
+                width: 1px;
+            }
         }      
     }
     &__content-mob {
@@ -689,7 +704,31 @@ body {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            grid-row-start: 2;
+            grid-column-start: 3;
         }
+    }
+    &__content-triangle-mob {
+        background-image: url(../img/green_triangle.svg);
+        background-repeat: no-repeat;
+        @include sizeTriangleMob;
+        align-self: center;
+        &::before {
+            content: 'Aa';
+            @include text(16px, 400, $colorWhite);
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+        }
+        &::after {
+            content: url(../icons/Content_icon_mob.svg);
+            position: absolute;
+            left: 22px;
+            top: 22px;
+        }
+    }
+    &__content-text-mob {
+        @include text(14px, 600, $colorDark);
     }
     &__content-numer {
         @include text(48px, 700, $colorDark);
@@ -731,7 +770,7 @@ body {
             }
         }
         &::after {
-            content: url(../icons/content_icon.svg);
+            content: url(../icons/Content_icon.svg);
             position: absolute;
             left: 50px;
             top: 43px;
@@ -758,14 +797,27 @@ body {
         grid-row-start: 4;
         grid-column-start: 2;
         @include developmentArrow;
+        @include _425 {
+            grid-row-start: 3;
+            width: 1px;
+            position: absolute;
+            transform: rotate(70deg);
+            bottom: 92px;
+            left: 43px;
+        }
         &::before {
             @include developmentArrowLeft;
-            transform: rotate(137deg);
+            transform: rotate(143deg);
+            @include _425 {
+                width: 1px;
+            }
         }
         &::after {
-            content: '';
             @include developmentArrowRight;
-            transform: rotate(43deg);
+            transform: rotate(36deg);
+            @include _425 {
+                width: 1px;
+            }
         }
     }
     &__promotion-mob {
@@ -773,8 +825,25 @@ body {
         @include _425 {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-end;
+            grid-row-start: 3;
+            grid-column-start: 1;
         }
+    }
+    &__promotion-triangle-mob {
+        background-image: url(../img/blue_triangle.svg);
+        background-repeat: no-repeat;
+        @include sizeTriangleMob;
+        align-self: center;
+        &::after {
+            content: url(../icons/TrandPromotion_icon_mob.svg);
+            position: absolute;
+            top: 20px;
+            left: 10px;
+        }
+    }
+    &__promotion-text-mob {
+        @include text(14px, 600, $colorDark);
     }
     &__promotion-numer {
         @include text(48px, 700, $colorDark);
