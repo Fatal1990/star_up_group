@@ -4,8 +4,15 @@ body {
 }
 
 .header {
+    width: 100%;
     background-color: $colorWhite;
     box-shadow: $shadow;
+    @include _768 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
     &__wrp {
         padding: 3px 16px;
         @include flexCenterSb;
@@ -18,6 +25,10 @@ body {
         }
         @include _820 {
             font-size: 12px;
+        }
+        @include _680 {
+            justify-content: space-between;
+            font-size: 18px;
         }
     }
     &__logo-img {
@@ -33,6 +44,48 @@ body {
         @include _680 {
             display: block;
         }
+    }
+    &__burger {
+        display: none;
+        @include _680 {
+            display: block;
+            position: relative;
+            width: 24px;
+            height: 21px;
+        }
+        &::before,
+        &::after {
+            content: '';
+            @include burgerLine;
+            right: 0;
+            transition: all .3s ease;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            top: 100%;
+        }
+        &.header__burger-active {
+            &::after {
+                @include burgerLineX;
+                transform: rotate(-45deg);
+            }
+            &::before {
+                @include burgerLineX;
+                transform: rotate(45deg);
+            }
+            & > .header__burger-midl {
+                transform: scale(0);
+                transition: all .3s ease;
+            }
+        }
+    }
+    &__burger-midl {
+        @include burgerLine;
+        right: 0;
+        top: 10px;
+        transition: all .3s ease;
     }
     &__nav-wrp {
         max-width: 900px;
@@ -52,6 +105,15 @@ body {
         }
         @include _680 {
             display: none;
+            max-width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            right: 0;
+            overflow: auto;
+            padding-top: 80px;
         }
     }
     &__lang-wrp {
@@ -283,7 +345,7 @@ body {
         @include button($colorWhite, $colorMain);
         margin-right: 32px;
         text-transform: uppercase;
-        transition: .3s, ease;
+        transition: all .3s, ease;
         @include _680 {
             font-size: 14px;
             height: 54px;
@@ -297,7 +359,7 @@ body {
         &:hover {
             background-color: $colorHoverButton;
             box-shadow: $shadowButt;
-            transition: .3s, ease-in;
+            transition: all .3s, ease-in;
         }
         &:active {
             background-color: $colorActiveButton;
@@ -307,7 +369,7 @@ body {
         @include button($colorMain, transparent);
         border: 3px solid $colorMain;
         text-transform: uppercase;
-        transition: .3s, ease;
+        transition: all .3s, ease;
         @include _680 {
             font-size: 14px;
             height: 54px;
@@ -320,7 +382,7 @@ body {
             color: $colorWhite;
             border-color: $colorHoverButton;
             box-shadow: $shadowButt;
-            transition: .3s, ease-in;
+            transition: all .3s, ease-in;
         }
         &:active {
             background-color: $colorActiveButton;
@@ -512,7 +574,7 @@ body {
         @include button($colorWhite, $colorMain);
         margin-right: 32px;
         text-transform: uppercase;
-        transition: .3s, ease;
+        transition: all .3s, ease;
         @include _680 {
             font-size: 14px;
             height: 54px;
@@ -526,7 +588,7 @@ body {
         &:hover {
             background-color: $colorHoverButton;
             box-shadow: $shadowButt;
-            transition: .3s, ease-in;
+            transition: all .3s, ease-in;
         }
         &:active {
             background-color: $colorActiveButton;
@@ -536,7 +598,7 @@ body {
         @include button($colorMain, transparent);
         border: 3px solid $colorMain;
         text-transform: uppercase;
-        transition: .3s, ease;
+        transition: all .3s, ease;
         @include _680 {
             font-size: 14px;
             height: 54px;
@@ -549,7 +611,7 @@ body {
             color: $colorWhite;
             border-color: $colorHoverButton;
             box-shadow: $shadowButt;
-            transition: .3s, ease-in;
+            transition: all .3s, ease-in;
         }
         &:active {
             background-color: $colorActiveButton;
@@ -1475,11 +1537,11 @@ body {
         @include button($colorDark, $colorWhite);
         max-width: 378px;
         text-transform: uppercase;
-        transition: 0.3 ease;
+        transition: all 0.3 ease;
         @include buttonMobMar;
         &:hover {
             background: linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
-            transition: 0.3 ease-in;
+            transition: all 0.3 ease-in;
         }
         &:active {
            background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(268.2deg, #1DCDFE 1.1%, #5D5FEF 100%);
@@ -1613,11 +1675,11 @@ body {
         height: 51px;
         @include button($colorWhite, $colorMain);
         text-transform: uppercase;
-        transition: .3s, ease;
+        transition: all .3s, ease;
         @include buttonMobMar;
         &:hover {
             background-color: $colorHoverButton;
-            transition: .3s, ease-in;
+            transition: all .3s, ease-in;
         }
         &:active {
             background-color: $colorActiveButton;

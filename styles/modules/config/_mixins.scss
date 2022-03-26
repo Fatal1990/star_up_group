@@ -23,6 +23,20 @@
     border-radius: 4px;
 }
 
+@mixin burgerLine {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: $colorBlack;
+    border-radius: 1px;
+}
+
+@mixin burgerLineX {
+    width: 24px;
+    top: 50%;
+    transition: all .3s ease;
+}
+
 @mixin buttonMobMar {
     @include _425 {
         max-width: 200px;
