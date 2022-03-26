@@ -3,6 +3,10 @@ body {
     font-family: $font;
 }
 
+.body-lock {
+    overflow: hidden;
+}
+
 .header {
     width: 100%;
     background-color: $colorWhite;
@@ -66,28 +70,55 @@ body {
         &::after {
             top: 100%;
         }
-        &.header__burger-active {
-            &::after {
-                @include burgerLineX;
-                transform: rotate(-45deg);
-            }
-            &::before {
-                @include burgerLineX;
-                transform: rotate(45deg);
-            }
-            & > .header__burger-midl {
-                transform: scale(0);
-                transition: all .3s ease;
-            }
-        }
     }
     &__burger-midl {
         @include burgerLine;
         right: 0;
-        top: 10px;
+        top: 50%;
         transition: all .3s ease;
     }
+    &__burger-active {
+        &::after {
+            @include burgerLineX;
+            transform: rotate(-45deg);
+        }
+        &::before {
+            @include burgerLineX;
+            transform: rotate(45deg);
+        }
+        & > .header__burger-midl {
+            transform: scale(0);
+            transition: all .3s ease;
+        }
+    }
     &__nav-wrp {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        @include _680 {
+            height: 0;
+            width: 100%;
+            background-color: $colorWhite;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: fixed;
+            top: 39px;
+            right: 0;
+            padding-top: 0;
+            padding-left: 24px;
+            padding-right: 24px;
+            overflow: auto;
+            transition: all .3s ease-out;
+        }
+    }
+    &__nav-wrp-active {
+        height: auto;
+        padding-top: 30px;
+        overflow: auto;
+        transition: all .5s ease-out;
+    }
+    &__nav {
         max-width: 900px;
         width: 100%;
         @include flexCenterSb;
@@ -104,16 +135,33 @@ body {
             max-width: 540px;
         }
         @include _680 {
-            display: none;
             max-width: 100%;
-            height: 100%;
             flex-direction: column;
+            justify-content: center;
             align-items: flex-start;
-            position: fixed;
-            top: 0;
-            right: 0;
-            overflow: auto;
-            padding-top: 80px;
+            margin-bottom: 27px;
+        }
+    }
+    &__nav-item {
+        @include _680 {
+            margin-bottom: 27px;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+        &:hover {
+            color: $colorMain;
+            cursor: pointer;
+        }
+    }
+    &__nav-line-mob {
+        display: none;
+        @include _680 {
+            display: block;
+            background-color: $colorDark;
+            width: 100%;
+            height: 1px;
+            margin-bottom: 27px;
         }
     }
     &__lang-wrp {
@@ -130,22 +178,31 @@ body {
             max-width: 86px;
         }
         @include _680 {
-            display: none;
+            max-width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
         }
     }
-}
-.nav-item:hover {
-    color: $colorMain;
-    cursor: pointer;
-}
-
-.lang-item:hover {
-    color: $colorMain;
-    cursor: pointer;
+    &__lang-item {
+        &:hover {
+            color: $colorMain;
+            cursor: pointer;
+        }
+        @include _680 {
+        margin-bottom: 27px;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .main {
     margin-bottom: 101px;
+    @include _680 {
+        padding-top: 40px;
+    }
     @include _425 {
         margin-bottom: 52px;
     }

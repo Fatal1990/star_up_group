@@ -9,29 +9,32 @@
     <link rel="stylesheet" href="styles/main.css">
     <script src="js/main.js"></script>
 </head>
-<body>
+<body id="lock">
     <header class="header">
         <div class="header__wrp">
             <a href="./" class="header__logo-link">
                 <img src="icons/Main_logo.svg" alt="Star Up Group" class="header__logo-img">
                 <img src="icons/Main_logo_small.svg" alt="Star Up Group" class="header__logo-img-mob">
             </a>
-            <div id="click" class="header__burger">
+            <div id="burger_active" class="header__burger">
                 <span class="header__burger-midl"></span>
             </div>
-            <nav class="header__nav-wrp">
-                <div class="nav-item nav-list-active">Главная</div>
-                <div class="nav-item">Контакты</div>
-                <div class="nav-item">Маркетинг</div>
-                <div class="nav-item">Разработка</div>
-                <div class="nav-item">Продвижение</div>
-                <div class="nav-item">Наполнение контентом</div>
-                <div class="nav-item">О нас</div>
-            </nav>
-            <div class="header__lang-wrp">
-                <div class="lang-item lang-item-active">RUS</div>
-                <div class="lang-item">UKR</div>
-                <div class="lang-item">ENG</div>
+            <div id="nav_active" class="header__nav-wrp">
+                <nav class="header__nav">
+                    <div class="header__nav-item nav-list-active">Главная</div>
+                    <div class="header__nav-item">Контакты</div>
+                    <div class="header__nav-item">Маркетинг</div>
+                    <div class="header__nav-item">Разработка</div>
+                    <div class="header__nav-item">Продвижение</div>
+                    <div class="header__nav-item">Наполнение контентом</div>
+                    <div class="header__nav-item">О нас</div>
+                </nav>
+                <div class="header__nav-line-mob"></div>
+                <div class="header__lang-wrp">
+                    <div class="header__lang-item lang-item-active">RUS</div>
+                    <div class="header__lang-item">UKR</div>
+                    <div class="header__lang-item">ENG</div>
+                </div>
             </div>
         </div>
     </header>

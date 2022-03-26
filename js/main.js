@@ -1,12 +1,11 @@
 window.onload = function () {
-   const active = document.getElementById('click');
+   const active = document.getElementById ('burger_active');
+   const nav = document.getElementById ('nav_active')
+   const lock = document.getElementById ('lock')
    console.log(active); 
    active.onclick = function () {
     active.classList.toggle ('header__burger-active')
-    // if(activ.classList.contains('header__burger-active')) {
-    //     activ.classList.remove('header__burger-active')
-    //     } else {
-    //     activ.classList.add('header__burger-active');
-    //     }
+    nav.classList.toggle ('header__nav-wrp-active')
+    lock.classList.toggle ('body-lock')
     }
 }  
