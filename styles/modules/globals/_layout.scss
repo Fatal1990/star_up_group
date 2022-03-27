@@ -99,24 +99,21 @@ body {
             height: 0;
             width: 100%;
             background-color: $colorWhite;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            @include flexColumnFS;
             position: fixed;
             top: 39px;
             right: 0;
             padding-top: 0;
             padding-left: 24px;
             padding-right: 24px;
-            overflow: auto;
             transition: all .3s ease-out;
         }
     }
     &__nav-wrp-active {
-        height: auto;
+        height: 530px;
         padding-top: 30px;
-        overflow: auto;
-        transition: all .5s ease-out;
+        overflow-y: auto;
+        transition: all .3s ease-out;
     }
     &__nav {
         max-width: 900px;
@@ -136,9 +133,7 @@ body {
         }
         @include _680 {
             max-width: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            @include flexColumnFS;
             margin-bottom: 27px;
         }
     }
@@ -179,9 +174,7 @@ body {
         }
         @include _680 {
             max-width: 100%;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
+            @include flexColumnFS;
         }
     }
     &__lang-item {

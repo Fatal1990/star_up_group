@@ -325,18 +325,17 @@ body {
     padding-top: 0;
     padding-left: 24px;
     padding-right: 24px;
-    overflow: auto;
     -webkit-transition: all .3s ease-out;
     transition: all .3s ease-out;
   }
 }
 
 .header__nav-wrp-active {
-  height: auto;
+  height: 530px;
   padding-top: 30px;
-  overflow: auto;
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  overflow-y: auto;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .header__nav {
@@ -461,12 +460,12 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
