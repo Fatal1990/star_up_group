@@ -106,13 +106,14 @@ body {
             padding-top: 0;
             padding-left: 24px;
             padding-right: 24px;
+            overflow-y: hidden;
             transition: all .3s ease-out;
         }
     }
     &__nav-wrp-active {
         height: 530px;
-        padding-top: 30px;
         overflow-y: auto;
+        padding-top: 30px;
         transition: all .3s ease-out;
     }
     &__nav {

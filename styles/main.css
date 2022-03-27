@@ -325,6 +325,7 @@ body {
     padding-top: 0;
     padding-left: 24px;
     padding-right: 24px;
+    overflow-y: hidden;
     -webkit-transition: all .3s ease-out;
     transition: all .3s ease-out;
   }
@@ -332,8 +333,8 @@ body {
 
 .header__nav-wrp-active {
   height: 530px;
-  padding-top: 30px;
   overflow-y: auto;
+  padding-top: 30px;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
