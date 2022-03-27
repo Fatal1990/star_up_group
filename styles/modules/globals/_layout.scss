@@ -1600,7 +1600,8 @@ body {
     }
 }
 
-.main-form {    
+.main-form,
+.popup-form {    
     &__wrp {
         padding-top: 36px;
         @include flexCenterColumn;
@@ -1833,6 +1834,90 @@ body {
         @include _425 {
             font-size: 12px;
         }
+    }
+}
+
+.popup-form {
+    &__container {
+        @include flexCenter;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        visibility: hidden;
+        transition: all .3s ease;
+        z-index: 500;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0a0a1177;
+            z-index: -1;
+            backdrop-filter: blur(24px) opacity(1);
+        }
+    }
+    &__active {
+        visibility: visible;
+    }
+}
+
+.popup-accept {
+    &__container {
+        @include flexCenter;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        @include paddStart;
+        z-index: 600;
+        visibility: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0a0a1177;
+            z-index: -1;
+            backdrop-filter: blur(24px) opacity(1);
+        }
+    }
+    &__wrp {
+        max-width: 604px;
+        width: 100%;
+        height: 617px;
+        @include flexCenter;
+        flex-direction: column;
+        background-color: $colorWhite;
+        @include _425 {
+            height: 389px;
+        }
+    }
+    &__img {
+        margin-bottom: 52px;
+        @include _425 {
+            width: 86px;
+            margin-bottom: 69px;
+        }
+    }
+    &__text {
+        max-width: 370px;
+        width: 100%;
+        @include text(18px, 500, $colorDark);
+        text-align: center;
+        @include _425 {
+            max-width: 250px;
+            font-size: 14px;
+        }
+    }
+    &__container-active {
+        visibility: visible;
     }
 }
 
